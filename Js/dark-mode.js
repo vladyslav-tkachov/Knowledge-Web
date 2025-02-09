@@ -6,7 +6,7 @@ function toggleDarkMode() {
     if (darkModeStyle) {
         // If dark mode is enabled, disable it
         darkModeStyle.remove();
-        button.innerText = "🌙 Invert";
+        button.innerText = "🌙 Dark Mode";
     } else {
         // Enable dark mode with a CSS filter
         const style = document.createElement("style");
@@ -21,7 +21,7 @@ function toggleDarkMode() {
             }
         `;
         document.head.appendChild(style);
-        button.innerText = "☀️ Revert";
+        button.innerText = "☀️ Light Mode";
     }
 }
 
