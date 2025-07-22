@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Knowledge Web - Git guide</title>
+  <link rel="stylesheet" href="../css/guide.css">
+  <link rel="shortcut icon" href="../assets/images/web_icon/website_icon.png" type="image/x-icon">
+
+</head>
+
+<body id="preview">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-item">Home</a></li>
+        <li><a href="../html/mini_guides_languages.html" class="nav-item">Languages</a></li>
+        <li><a href="../html/mini_guides.html" class="nav-item">General</a></li>
+        <li><a href="../html/mini_guides_rpa.html" class="nav-item">RPA</a></li>
+        <!-- <li><a href="./html/projects.html" class="nav-item">Projects</a></li>
+                                  <li><a href="./html/bobbles.html" class="nav-item">Bobbles</a></li> -->
+      </ul>
+      <!-- Dark Mode Button -->
+      <div class="dark-mode-toggle">
+        <button id="dark-mode-btn">🌙 Dark Mode</button>
+      </div>
+    </div>
+  </nav>
+  <h2 class="code-line" data-line-start=0 data-line-end=1><a
+      id="1_Basics_Understanding_Git_and_Version_Control_0"></a><strong>1. Basics: Understanding Git and Version
+      Control</strong></h2>
+  <h3 class="code-line" data-line-start=2 data-line-end=3><a id="What_is_Git_2"></a><strong>What is Git?</strong></h3>
+  <ul>
+    <li class="has-line-data" data-line-start="3" data-line-end="4">Git is a <strong>distributed version control
+        system</strong> that tracks changes to files in a project.</li>
+    <li class="has-line-data" data-line-start="4" data-line-end="5">Allows multiple developers to collaborate
+      effectively.</li>
+    <li class="has-line-data" data-line-start="5" data-line-end="7">Provides a history of changes, enabling version
+      rollbacks.</li>
+  </ul>
+  <h3 class="code-line" data-line-start=7 data-line-end=8><a id="Install_Git_7"></a><strong>Install Git</strong></h3>
+  <p class="has-line-data" data-line-start="8" data-line-end="9">Download and install Git from: <a
+      href="https://git-scm.com">https://git-scm.com</a></p>
+  <hr>
+  <h2 class="code-line" data-line-start=12 data-line-end=13><a id="2_Initial_Setup_12"></a><strong>2. Initial
+      Setup</strong></h2>
+  <h3 class="code-line" data-line-start=14 data-line-end=15><a id="Code_Example_Configure_Git_14"></a><strong>Code
+      Example: Configure Git</strong></h3>
+  <pre><code class="has-line-data" data-line-start="16" data-line-end="23" class="language-bash"><span class="hljs-comment"># Set global username and email</span>
+git config --global user.name <span class="hljs-string">"Your Name"</span>
+git config --global user.email <span class="hljs-string">"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f36203a3d2a222e26230f2a372e223f232a612c2022">[email&#160;protected]</a>"</span>
+
+<span class="hljs-comment"># Verify configuration</span>
+git config --list
+</code></pre>
+  <h3 class="code-line" data-line-start=24 data-line-end=25><a id="Key_Concepts_24"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="25" data-line-end="26">Git uses your name and email to track authorship
+      of commits.</li>
+    <li class="has-line-data" data-line-start="26" data-line-end="28">Settings are stored in a <code>.gitconfig</code>
+      file.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=30 data-line-end=31><a id="3_Creating_a_Repository_30"></a><strong>3. Creating a
+      Repository</strong></h2>
+  <h3 class="code-line" data-line-start=32 data-line-end=33><a
+      id="Code_Example_Create_and_Initialize_a_Repository_32"></a><strong>Code Example: Create and Initialize a
+      Repository</strong></h3>
+  <pre><code class="has-line-data" data-line-start="34" data-line-end="41" class="language-bash"><span class="hljs-comment"># Create a folder for your project</span>
+mkdir my-project
+<span class="hljs-built_in">cd</span> my-project
+
+<span class="hljs-comment"># Initialize a Git repository</span>
+git init
+</code></pre>
+  <h3 class="code-line" data-line-start=42 data-line-end=43><a id="Key_Concepts_42"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="43" data-line-end="44"><code>git init</code> creates an empty Git
+      repository in your project folder.</li>
+    <li class="has-line-data" data-line-start="44" data-line-end="46">A hidden <code>.git</code> folder is created to
+      store all version control data.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=48 data-line-end=49><a id="4_Tracking_Changes_48"></a><strong>4. Tracking
+      Changes</strong></h2>
+  <h3 class="code-line" data-line-start=50 data-line-end=51><a
+      id="Code_Example_Add_and_Commit_Files_50"></a><strong>Code Example: Add and Commit Files</strong></h3>
+  <pre><code class="has-line-data" data-line-start="52" data-line-end="61" class="language-bash"><span class="hljs-comment"># Add a new file</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"Hello, Git!"</span> &gt; hello.txt
+
+<span class="hljs-comment"># Stage the file (add it to the commit)</span>
+git add hello.txt
+
+<span class="hljs-comment"># Commit the file with a message</span>
+git commit -m <span class="hljs-string">"Initial commit"</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=62 data-line-end=63><a id="Key_Concepts_62"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="63" data-line-end="64"><strong>Staging</strong>: Files are added to the
+      staging area using <code>git add</code>.</li>
+    <li class="has-line-data" data-line-start="64" data-line-end="66"><strong>Commit</strong>: A snapshot of staged
+      changes is saved with <code>git commit</code>.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=68 data-line-end=69><a id="5_Check_Status_and_Logs_68"></a><strong>5. Check
+      Status and Logs</strong></h2>
+  <h3 class="code-line" data-line-start=70 data-line-end=71><a id="Code_Example_Status_and_History_70"></a><strong>Code
+      Example: Status and History</strong></h3>
+  <pre><code class="has-line-data" data-line-start="72" data-line-end="78" class="language-bash"><span class="hljs-comment"># Check the status of your repository</span>
+git status
+
+<span class="hljs-comment"># View commit history</span>
+git <span class="hljs-built_in">log</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=79 data-line-end=80><a id="Key_Concepts_79"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="80" data-line-end="81"><code>git status</code> shows which files are
+      staged, modified, or untracked.</li>
+    <li class="has-line-data" data-line-start="81" data-line-end="83"><code>git log</code> displays the history of
+      commits in your project.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=85 data-line-end=86><a id="6_Branching_85"></a><strong>6. Branching</strong>
+  </h2>
+  <h3 class="code-line" data-line-start=87 data-line-end=88><a
+      id="Code_Example_Create_and_Switch_Branches_87"></a><strong>Code Example: Create and Switch Branches</strong></h3>
+  <pre><code class="has-line-data" data-line-start="89" data-line-end="98" class="language-bash"><span class="hljs-comment"># Create a new branch</span>
+git branch feature-branch
+
+<span class="hljs-comment"># Switch to the new branch</span>
+git checkout feature-branch
+
+<span class="hljs-comment"># Create and switch in one command</span>
+git checkout -b new-branch
+</code></pre>
+  <h3 class="code-line" data-line-start=99 data-line-end=100><a id="Key_Concepts_99"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="100" data-line-end="101">Branching allows you to develop features or
+      fixes without affecting the main codebase.</li>
+    <li class="has-line-data" data-line-start="101" data-line-end="103"><code>git checkout</code> switches between
+      branches.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=105 data-line-end=106><a id="7_Merging_Branches_105"></a><strong>7. Merging
+      Branches</strong></h2>
+  <h3 class="code-line" data-line-start=107 data-line-end=108><a id="Code_Example_Merge_Changes_107"></a><strong>Code
+      Example: Merge Changes</strong></h3>
+  <pre><code class="has-line-data" data-line-start="109" data-line-end="115" class="language-bash"><span class="hljs-comment"># Switch to the main branch</span>
+git checkout main
+
+<span class="hljs-comment"># Merge the feature branch into main</span>
+git merge feature-branch
+</code></pre>
+  <h3 class="code-line" data-line-start=116 data-line-end=117><a id="Key_Concepts_116"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="117" data-line-end="118">Merging combines changes from one branch into
+      another.</li>
+    <li class="has-line-data" data-line-start="118" data-line-end="120">Resolve conflicts manually if Git cannot
+      automatically merge changes.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=122 data-line-end=123><a
+      id="8_Working_with_Remote_Repositories_122"></a><strong>8. Working with Remote Repositories</strong></h2>
+  <h3 class="code-line" data-line-start=124 data-line-end=125><a
+      id="Code_Example_Connect_to_Remote_and_Push_124"></a><strong>Code Example: Connect to Remote and Push</strong>
+  </h3>
+  <pre><code class="has-line-data" data-line-start="126" data-line-end="132" class="language-bash"><span class="hljs-comment"># Add a remote repository</span>
+git remote add origin https://github.com/username/repository.git
+
+<span class="hljs-comment"># Push changes to the remote repository</span>
+git push -u origin main
+</code></pre>
+  <h3 class="code-line" data-line-start=133 data-line-end=134><a id="Key_Concepts_133"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="134" data-line-end="135"><strong>Remote</strong>: A remote repository is
+      a Git repository hosted on platforms like GitHub or GitLab.</li>
+    <li class="has-line-data" data-line-start="135" data-line-end="137"><code>git push</code> uploads local changes to
+      the remote repository.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=139 data-line-end=140><a id="9_Pulling_Changes_139"></a><strong>9. Pulling
+      Changes</strong></h2>
+  <h3 class="code-line" data-line-start=141 data-line-end=142><a id="Code_Example_Fetch_and_Pull_141"></a><strong>Code
+      Example: Fetch and Pull</strong></h3>
+  <pre><code class="has-line-data" data-line-start="143" data-line-end="146" class="language-bash"><span class="hljs-comment"># Pull changes from the remote repository</span>
+git pull origin main
+</code></pre>
+  <h3 class="code-line" data-line-start=147 data-line-end=148><a id="Key_Concepts_147"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="148" data-line-end="150"><strong>Pull</strong>: Fetches and merges
+      changes from the remote repository into your local branch.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=152 data-line-end=153><a id="10_Cloning_a_Repository_152"></a><strong>10.
+      Cloning a Repository</strong></h2>
+  <h3 class="code-line" data-line-start=154 data-line-end=155><a
+      id="Code_Example_Clone_a_Remote_Repository_154"></a><strong>Code Example: Clone a Remote Repository</strong></h3>
+  <pre><code class="has-line-data" data-line-start="156" data-line-end="159" class="language-bash"><span class="hljs-comment"># Clone an existing repository</span>
+git <span class="hljs-built_in">clone</span> https://github.com/username/repository.git
+</code></pre>
+  <h3 class="code-line" data-line-start=160 data-line-end=161><a id="Key_Concepts_160"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="161" data-line-end="163">Cloning downloads a remote repository to your
+      local machine.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=165 data-line-end=166><a id="11_Resolving_Merge_Conflicts_165"></a><strong>11.
+      Resolving Merge Conflicts</strong></h2>
+  <h3 class="code-line" data-line-start=167 data-line-end=168><a
+      id="Scenario_A_conflict_occurs_when_Git_cannot_automatically_merge_changes_167"></a><strong>Scenario</strong>: A
+    conflict occurs when Git cannot automatically merge changes.</h3>
+  <h3 class="code-line" data-line-start=169 data-line-end=170><a id="Steps_to_Resolve_Conflicts_169"></a><strong>Steps
+      to Resolve Conflicts</strong></h3>
+  <ol>
+    <li class="has-line-data" data-line-start="170" data-line-end="171">Open the conflicting file.</li>
+    <li class="has-line-data" data-line-start="171" data-line-end="179">Edit the conflict markers:
+      <pre><code class="has-line-data" data-line-start="173" data-line-end="179" class="language-bash">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Your <span class="hljs-built_in">local</span> changes
+=======
+Incoming changes from the other branch
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch
+</code></pre>
+    </li>
+    <li class="has-line-data" data-line-start="179" data-line-end="183">Save the file and stage it:
+      <pre><code class="has-line-data" data-line-start="181" data-line-end="183" class="language-bash">git add &lt;filename&gt;
+</code></pre>
+    </li>
+    <li class="has-line-data" data-line-start="183" data-line-end="188">Commit the resolution:
+      <pre><code class="has-line-data" data-line-start="185" data-line-end="187" class="language-bash">git commit -m <span class="hljs-string">"Resolved merge conflict in &lt;filename&gt;"</span>
+</code></pre>
+    </li>
+  </ol>
+  <hr>
+  <h2 class="code-line" data-line-start=190 data-line-end=191><a id="12_Ignoring_Files_190"></a><strong>12. Ignoring
+      Files</strong></h2>
+  <h3 class="code-line" data-line-start=192 data-line-end=193><a id="Code_Example_Use_gitignore_192"></a><strong>Code
+      Example: Use .gitignore</strong></h3>
+  <pre><code class="has-line-data" data-line-start="194" data-line-end="202" class="language-bash"><span class="hljs-comment"># Create a .gitignore file</span>
+touch .gitignore
+
+<span class="hljs-comment"># Ignore files</span>
+node_modules/
+*.log
+.DS_Store
+</code></pre>
+  <h3 class="code-line" data-line-start=203 data-line-end=204><a id="Key_Concepts_203"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="204" data-line-end="206"><code>.gitignore</code> specifies files or
+      directories that Git should not track.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=208 data-line-end=209><a id="13_Stashing_Changes_208"></a><strong>13. Stashing
+      Changes</strong></h2>
+  <h3 class="code-line" data-line-start=210 data-line-end=211><a
+      id="Code_Example_Stash_Unfinished_Work_210"></a><strong>Code Example: Stash Unfinished Work</strong></h3>
+  <pre><code class="has-line-data" data-line-start="212" data-line-end="218" class="language-bash"><span class="hljs-comment"># Save your uncommitted changes</span>
+git stash
+
+<span class="hljs-comment"># Apply stashed changes</span>
+git stash pop
+</code></pre>
+  <h3 class="code-line" data-line-start=219 data-line-end=220><a id="Key_Concepts_219"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="220" data-line-end="222">Stashing temporarily saves changes without
+      committing them.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=224 data-line-end=225><a id="14_Undoing_Changes_224"></a><strong>14. Undoing
+      Changes</strong></h2>
+  <h3 class="code-line" data-line-start=226 data-line-end=227><a
+      id="Code_Example_Undo_Local_Changes_226"></a><strong>Code Example: Undo Local Changes</strong></h3>
+  <pre><code class="has-line-data" data-line-start="228" data-line-end="234" class="language-bash"><span class="hljs-comment"># Discard unstaged changes</span>
+git checkout -- &lt;file&gt;
+
+<span class="hljs-comment"># Reset staged changes</span>
+git reset &lt;file&gt;
+</code></pre>
+  <h3 class="code-line" data-line-start=235 data-line-end=236><a id="Key_Concepts_235"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="236" data-line-end="237"><code>git reset</code> removes changes from the
+      staging area.</li>
+    <li class="has-line-data" data-line-start="237" data-line-end="239"><code>git checkout</code> reverts a file to its
+      last committed state.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=241 data-line-end=242><a id="15_Tags_241"></a><strong>15. Tags</strong></h2>
+  <h3 class="code-line" data-line-start=243 data-line-end=244><a id="Code_Example_Tag_a_Commit_243"></a><strong>Code
+      Example: Tag a Commit</strong></h3>
+  <pre><code class="has-line-data" data-line-start="245" data-line-end="251" class="language-bash"><span class="hljs-comment"># Create an annotated tag</span>
+git tag <span class="hljs-operator">-a</span> v1.<span class="hljs-number">0</span> -m <span class="hljs-string">"Release version 1.0"</span>
+
+<span class="hljs-comment"># Push tags to remote</span>
+git push origin v1.<span class="hljs-number">0</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=252 data-line-end=253><a id="Key_Concepts_252"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="253" data-line-end="255">Tags are used to mark specific points in the
+      repository’s history.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=257 data-line-end=258><a id="16_Reverting_a_Commit_257"></a><strong>16.
+      Reverting a Commit</strong></h2>
+  <h3 class="code-line" data-line-start=259 data-line-end=260><a id="Code_Example_Revert_Changes_259"></a><strong>Code
+      Example: Revert Changes</strong></h3>
+  <pre><code class="has-line-data" data-line-start="261" data-line-end="264" class="language-bash"><span class="hljs-comment"># Revert the last commit</span>
+git revert HEAD
+</code></pre>
+  <h3 class="code-line" data-line-start=265 data-line-end=266><a id="Key_Concepts_265"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="266" data-line-end="268"><code>git revert</code> creates a new commit
+      that undoes changes made in a previous commit.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=270 data-line-end=271><a id="17_Advanced_Topics_270"></a><strong>17. Advanced
+      Topics</strong></h2>
+  <h3 class="code-line" data-line-start=272 data-line-end=273><a id="Rebasing_272"></a><strong>Rebasing</strong></h3>
+  <p class="has-line-data" data-line-start="273" data-line-end="274">Rebasing rewrites commit history:</p>
+  <pre><code class="has-line-data" data-line-start="275" data-line-end="277" class="language-bash">git rebase main
+</code></pre>
+  <h3 class="code-line" data-line-start=278 data-line-end=279><a id="Interactive_Rebase_278"></a><strong>Interactive
+      Rebase</strong></h3>
+  <p class="has-line-data" data-line-start="279" data-line-end="280">Modify commits interactively:</p>
+  <pre><code class="has-line-data" data-line-start="281" data-line-end="283" class="language-bash">git rebase -i HEAD~<span class="hljs-number">3</span>
+</code></pre>
+  <hr>
+  <h2 class="code-line" data-line-start=286 data-line-end=287><a id="18_Summary_of_Key_Commands_286"></a><strong>18.
+      Summary of Key Commands</strong></h2>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><strong>Command</strong></th>
+        <th><strong>Description</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>git init</code></td>
+        <td>Initialize a new repository</td>
+      </tr>
+      <tr>
+        <td><code>git add &lt;file&gt;</code></td>
+        <td>Stage changes</td>
+      </tr>
+      <tr>
+        <td><code>git commit -m &quot;message&quot;</code></td>
+        <td>Commit staged changes</td>
+      </tr>
+      <tr>
+        <td><code>git status</code></td>
+        <td>Show working directory status</td>
+      </tr>
+      <tr>
+        <td><code>git log</code></td>
+        <td>View commit history</td>
+      </tr>
+      <tr>
+        <td><code>git branch &lt;name&gt;</code></td>
+        <td>Create a new branch</td>
+      </tr>
+      <tr>
+        <td><code>git checkout &lt;branch&gt;</code></td>
+        <td>Switch to a branch</td>
+      </tr>
+      <tr>
+        <td><code>git merge &lt;branch&gt;</code></td>
+        <td>Merge a branch</td>
+      </tr>
+      <tr>
+        <td><code>git remote add &lt;name&gt; URL</code></td>
+        <td>Add a remote repository</td>
+      </tr>
+      <tr>
+        <td><code>git push</code></td>
+        <td>Push changes to a remote repository</td>
+      </tr>
+      <tr>
+        <td><code>git pull</code></td>
+        <td>Fetch and merge changes from remote</td>
+      </tr>
+      <tr>
+        <td><code>git clone &lt;URL&gt;</code></td>
+        <td>Clone a repository</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2 class="code-line" data-line-start=305 data-line-end=306><a id="19_Best_Practices_305"></a><strong>19. Best
+      Practices</strong></h2>
+  <ol>
+    <li class="has-line-data" data-line-start="306" data-line-end="307">Commit often with clear and descriptive
+      messages.</li>
+    <li class="has-line-data" data-line-start="307" data-line-end="308">Use branches for new features or fixes.</li>
+    <li class="has-line-data" data-line-start="308" data-line-end="309">Avoid committing sensitive data (e.g.,
+      passwords).</li>
+    <li class="has-line-data" data-line-start="309" data-line-end="310">Use <code>.gitignore</code> to exclude
+      unnecessary files.</li>
+    <li class="has-line-data" data-line-start="310" data-line-end="312">Pull changes regularly to stay in sync with the
+      remote repository.</li>
+  </ol>
+  <hr>
+  <h2 class="code-line" data-line-start=314 data-line-end=315><a id="20_Resources_314"></a><strong>20.
+      Resources</strong></h2>
+  <ol>
+    <li class="has-line-data" data-line-start="315" data-line-end="316"><a href="https://git-scm.com/doc">Git
+        Documentation</a></li>
+    <li class="has-line-data" data-line-start="316" data-line-end="317"><a href="https://git-scm.com/book/en/v2">Pro Git
+        Book</a></li>
+    <li class="has-line-data" data-line-start="317" data-line-end="319"><a
+        href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet">Git Cheat Sheet</a></li>
+  </ol>
+  <h2 class="code-line" data-line-start=319 data-line-end=320><a id="21_Working_with_Submodules_319"></a><strong>21.
+      Working with Submodules</strong></h2>
+  <h3 class="code-line" data-line-start=321 data-line-end=322><a id="What_are_Submodules_321"></a><strong>What are
+      Submodules?</strong></h3>
+  <p class="has-line-data" data-line-start="322" data-line-end="323">Submodules allow you to include another Git
+    repository as a part of your project. This is useful when you’re working with shared libraries or external
+    repositories.</p>
+  <h3 class="code-line" data-line-start=324 data-line-end=325><a
+      id="Code_Example_Adding_and_Managing_Submodules_324"></a><strong>Code Example: Adding and Managing
+      Submodules</strong></h3>
+  <pre><code class="has-line-data" data-line-start="326" data-line-end="339" class="language-bash"><span class="hljs-comment"># Add a submodule to your repository</span>
+git submodule add https://github.com/example/shared-library.git libs/shared-library
+
+<span class="hljs-comment"># Clone a repository with submodules</span>
+git <span class="hljs-built_in">clone</span> --recurse-submodules https://github.com/username/repository.git
+
+<span class="hljs-comment"># Update all submodules</span>
+git submodule update --remote
+
+<span class="hljs-comment"># Initialize submodules (if cloning an existing repo)</span>
+git submodule init
+git submodule update
+</code></pre>
+  <h3 class="code-line" data-line-start=340 data-line-end=341><a id="Key_Concepts_340"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="341" data-line-end="342">Submodules are like nested repositories.</li>
+    <li class="has-line-data" data-line-start="342" data-line-end="344"><code>git submodule update --remote</code>
+      fetches the latest changes in the submodule.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=346 data-line-end=347><a id="22_CherryPicking_Commits_346"></a><strong>22.
+      Cherry-Picking Commits</strong></h2>
+  <h3 class="code-line" data-line-start=348 data-line-end=349><a id="What_is_CherryPicking_348"></a><strong>What is
+      Cherry-Picking?</strong></h3>
+  <p class="has-line-data" data-line-start="349" data-line-end="350">Cherry-picking allows you to select specific
+    commits from one branch and apply them to another.</p>
+  <h3 class="code-line" data-line-start=351 data-line-end=352><a
+      id="Code_Example_CherryPick_a_Commit_351"></a><strong>Code Example: Cherry-Pick a Commit</strong></h3>
+  <pre><code class="has-line-data" data-line-start="353" data-line-end="359" class="language-bash"><span class="hljs-comment"># Cherry-pick a single commit</span>
+git cherry-pick &lt;commit-hash&gt;
+
+<span class="hljs-comment"># Cherry-pick multiple commits</span>
+git cherry-pick &lt;commit-hash1&gt; &lt;commit-hash2&gt;
+</code></pre>
+  <h3 class="code-line" data-line-start=360 data-line-end=361><a id="Key_Concepts_360"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="361" data-line-end="363">Useful when you want to bring specific changes
+      into your branch without merging the entire branch.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=365 data-line-end=366><a id="23_Squashing_Commits_365"></a><strong>23. Squashing
+      Commits</strong></h2>
+  <h3 class="code-line" data-line-start=367 data-line-end=368><a id="What_is_Squashing_367"></a><strong>What is
+      Squashing?</strong></h3>
+  <p class="has-line-data" data-line-start="368" data-line-end="369">Squashing combines multiple commits into one,
+    keeping the history cleaner.</p>
+  <h3 class="code-line" data-line-start=370 data-line-end=371><a
+      id="Code_Example_Squash_Commits_Interactively_370"></a><strong>Code Example: Squash Commits Interactively</strong>
+  </h3>
+  <pre><code class="has-line-data" data-line-start="372" data-line-end="375" class="language-bash"><span class="hljs-comment"># Rebase interactively for the last 3 commits</span>
+git rebase -i HEAD~<span class="hljs-number">3</span>
+</code></pre>
+  <ol>
+    <li class="has-line-data" data-line-start="375" data-line-end="376">In the editor, change <code>pick</code> to
+      <code>squash</code> for commits you want to merge.
+    </li>
+    <li class="has-line-data" data-line-start="376" data-line-end="377">Save and close the editor.</li>
+    <li class="has-line-data" data-line-start="377" data-line-end="379">Edit the new commit message as needed.</li>
+  </ol>
+  <hr>
+  <h2 class="code-line" data-line-start=381 data-line-end=382><a id="24_Git_Blame_and_Annotate_381"></a><strong>24. Git
+      Blame and Annotate</strong></h2>
+  <h3 class="code-line" data-line-start=383 data-line-end=384><a id="What_is_Git_Blame_383"></a><strong>What is Git
+      Blame?</strong></h3>
+  <p class="has-line-data" data-line-start="384" data-line-end="385"><code>git blame</code> identifies who last modified
+    each line in a file.</p>
+  <h3 class="code-line" data-line-start=386 data-line-end=387><a id="Code_Example_Using_Git_Blame_386"></a><strong>Code
+      Example: Using Git Blame</strong></h3>
+  <pre><code class="has-line-data" data-line-start="388" data-line-end="391" class="language-bash"><span class="hljs-comment"># Show blame for a file</span>
+git blame &lt;filename&gt;
+</code></pre>
+  <h3 class="code-line" data-line-start=392 data-line-end=393><a id="Key_Concepts_392"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="393" data-line-end="395">Helps identify authorship and context for
+      specific changes in a file.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=397 data-line-end=398><a
+      id="25_Reflog_Recovering_Lost_Commits_397"></a><strong>25. Reflog: Recovering Lost Commits</strong></h2>
+  <h3 class="code-line" data-line-start=399 data-line-end=400><a id="What_is_Git_Reflog_399"></a><strong>What is Git
+      Reflog?</strong></h3>
+  <p class="has-line-data" data-line-start="400" data-line-end="401">Reflog is a log of all actions in the repository,
+    including references to commits that might have been “lost.”</p>
+  <h3 class="code-line" data-line-start=402 data-line-end=403><a id="Code_Example_Recover_a_Commit_402"></a><strong>Code
+      Example: Recover a Commit</strong></h3>
+  <pre><code class="has-line-data" data-line-start="404" data-line-end="410" class="language-bash"><span class="hljs-comment"># View the reflog</span>
+git reflog
+
+<span class="hljs-comment"># Reset to a previous state</span>
+git reset --hard &lt;reflog-hash&gt;
+</code></pre>
+  <h3 class="code-line" data-line-start=411 data-line-end=412><a id="Key_Concepts_411"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="412" data-line-end="414">Reflog is a safety net for recovering
+      accidentally deleted commits.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=416 data-line-end=417><a id="26_Bisecting_to_Find_Bugs_416"></a><strong>26.
+      Bisecting to Find Bugs</strong></h2>
+  <h3 class="code-line" data-line-start=418 data-line-end=419><a id="What_is_Git_Bisect_418"></a><strong>What is Git
+      Bisect?</strong></h3>
+  <p class="has-line-data" data-line-start="419" data-line-end="420"><code>git bisect</code> is used to find the commit
+    that introduced a bug by performing a binary search through your commit history.</p>
+  <h3 class="code-line" data-line-start=421 data-line-end=422><a
+      id="Code_Example_Bisect_to_Find_a_Bad_Commit_421"></a><strong>Code Example: Bisect to Find a Bad Commit</strong>
+  </h3>
+  <pre><code class="has-line-data" data-line-start="423" data-line-end="434" class="language-bash"><span class="hljs-comment"># Start a bisect session</span>
+git bisect start
+
+<span class="hljs-comment"># Mark the current commit as bad</span>
+git bisect bad
+
+<span class="hljs-comment"># Mark a known good commit</span>
+git bisect good &lt;commit-hash&gt;
+
+<span class="hljs-comment"># Follow the prompts to identify the bad commit</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=435 data-line-end=436><a id="Key_Concepts_435"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="436" data-line-end="438">Git automatically checks out commits for you,
+      allowing you to test and find the “bad” commit.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=440 data-line-end=441><a id="27_Git_Hooks_440"></a><strong>27. Git
+      Hooks</strong></h2>
+  <h3 class="code-line" data-line-start=442 data-line-end=443><a id="What_are_Git_Hooks_442"></a><strong>What are Git
+      Hooks?</strong></h3>
+  <p class="has-line-data" data-line-start="443" data-line-end="444">Hooks allow you to execute custom scripts at
+    different points in the Git workflow (e.g., before committing, after merging).</p>
+  <h3 class="code-line" data-line-start=445 data-line-end=446><a id="Code_Example_PreCommit_Hook_445"></a><strong>Code
+      Example: Pre-Commit Hook</strong></h3>
+  <p class="has-line-data" data-line-start="446" data-line-end="447">Create a file in
+    <code>.git/hooks/pre-commit</code>:
+  </p>
+  <pre><code class="has-line-data" data-line-start="448" data-line-end="455" class="language-bash"><span class="hljs-shebang">#!/bin/sh</span>
+<span class="hljs-comment"># A simple script to prevent commits with TODO comments</span>
+<span class="hljs-keyword">if</span> grep -r <span class="hljs-string">"TODO"</span> .; <span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">"Error: Found TODO comments in the code!"</span>
+  <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+  <p class="has-line-data" data-line-start="456" data-line-end="457">Make the hook executable:</p>
+  <pre><code class="has-line-data" data-line-start="458" data-line-end="460" class="language-bash">chmod +x .git/hooks/pre-commit
+</code></pre>
+  <h3 class="code-line" data-line-start=461 data-line-end=462><a id="Key_Concepts_461"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="462" data-line-end="463">Hooks automate tasks such as code checks,
+      formatting, or testing.</li>
+    <li class="has-line-data" data-line-start="463" data-line-end="465">Hooks are stored locally in
+      <code>.git/hooks</code> and are not shared with the repository.
+    </li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=467 data-line-end=468><a id="28_Git_Worktrees_467"></a><strong>28. Git
+      Worktrees</strong></h2>
+  <h3 class="code-line" data-line-start=469 data-line-end=470><a id="What_is_a_Worktree_469"></a><strong>What is a
+      Worktree?</strong></h3>
+  <p class="has-line-data" data-line-start="470" data-line-end="471">A worktree allows you to have multiple working
+    directories associated with the same repository. This is helpful when working on multiple branches simultaneously.
+  </p>
+  <h3 class="code-line" data-line-start=472 data-line-end=473><a id="Code_Example_Worktrees_472"></a><strong>Code
+      Example: Worktrees</strong></h3>
+  <pre><code class="has-line-data" data-line-start="474" data-line-end="483" class="language-bash"><span class="hljs-comment"># Create a new worktree for a branch</span>
+git worktree add ../feature-worktree feature-branch
+
+<span class="hljs-comment"># List all worktrees</span>
+git worktree list
+
+<span class="hljs-comment"># Remove a worktree</span>
+git worktree remove ../feature-worktree
+</code></pre>
+  <h3 class="code-line" data-line-start=484 data-line-end=485><a id="Key_Concepts_484"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="485" data-line-end="487">Worktrees allow you to work on different
+      branches without needing to clone the repository again.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=489 data-line-end=490><a id="29_Reset_Revert_and_Checkout_489"></a><strong>29.
+      Reset, Revert, and Checkout</strong></h2>
+  <h3 class="code-line" data-line-start=491 data-line-end=492><a id="Code_Example_Reset_Changes_491"></a><strong>Code
+      Example: Reset Changes</strong></h3>
+  <pre><code class="has-line-data" data-line-start="493" data-line-end="499" class="language-bash"><span class="hljs-comment"># Soft reset (keep changes staged)</span>
+git reset --soft HEAD~<span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Hard reset (remove all changes)</span>
+git reset --hard HEAD~<span class="hljs-number">1</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=500 data-line-end=501><a id="Revert_Changes_500"></a><strong>Revert
+      Changes</strong></h3>
+  <pre><code class="has-line-data" data-line-start="502" data-line-end="505" class="language-bash"><span class="hljs-comment"># Revert a specific commit</span>
+git revert &lt;commit-hash&gt;
+</code></pre>
+  <h3 class="code-line" data-line-start=506 data-line-end=507><a id="Checkout_Specific_File_506"></a><strong>Checkout
+      Specific File</strong></h3>
+  <pre><code class="has-line-data" data-line-start="508" data-line-end="511" class="language-bash"><span class="hljs-comment"># Restore a specific file to its last committed state</span>
+git checkout -- &lt;filename&gt;
+</code></pre>
+  <h3 class="code-line" data-line-start=512 data-line-end=513><a id="Key_Concepts_512"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="513" data-line-end="514"><strong><code>reset</code></strong>: Moves the
+      HEAD pointer to a previous commit.</li>
+    <li class="has-line-data" data-line-start="514" data-line-end="515"><strong><code>revert</code></strong>: Creates a
+      new commit that undoes changes in a specific commit.</li>
+    <li class="has-line-data" data-line-start="515" data-line-end="517"><strong><code>checkout</code></strong>: Restores
+      files or switches branches.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=519 data-line-end=520><a id="30_Git_Tagging_519"></a><strong>30. Git
+      Tagging</strong></h2>
+  <h3 class="code-line" data-line-start=521 data-line-end=522><a id="What_are_Tags_521"></a><strong>What are
+      Tags?</strong></h3>
+  <p class="has-line-data" data-line-start="522" data-line-end="523">Tags are used to mark important milestones (e.g.,
+    releases).</p>
+  <h3 class="code-line" data-line-start=524 data-line-end=525><a id="Code_Example_Creating_Tags_524"></a><strong>Code
+      Example: Creating Tags</strong></h3>
+  <pre><code class="has-line-data" data-line-start="526" data-line-end="532" class="language-bash"><span class="hljs-comment"># Annotated tag with a message</span>
+git tag <span class="hljs-operator">-a</span> v1.<span class="hljs-number">0</span> -m <span class="hljs-string">"Version 1.0 release"</span>
+
+<span class="hljs-comment"># Lightweight tag</span>
+git tag v1.<span class="hljs-number">0</span>-light
+</code></pre>
+  <h3 class="code-line" data-line-start=533 data-line-end=534><a id="Push_Tags_to_Remote_533"></a><strong>Push Tags to
+      Remote</strong></h3>
+  <pre><code class="has-line-data" data-line-start="535" data-line-end="541" class="language-bash"><span class="hljs-comment"># Push all tags</span>
+git push --tags
+
+<span class="hljs-comment"># Push a specific tag</span>
+git push origin v1.<span class="hljs-number">0</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=542 data-line-end=543><a id="Key_Concepts_542"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="543" data-line-end="544"><strong>Lightweight tags</strong> are simple
+      labels.</li>
+    <li class="has-line-data" data-line-start="544" data-line-end="546"><strong>Annotated tags</strong> include metadata
+      (author, date, message).</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=548 data-line-end=549><a id="31_Comparing_Differences_548"></a><strong>31.
+      Comparing Differences</strong></h2>
+  <h3 class="code-line" data-line-start=550 data-line-end=551><a id="Code_Example_Compare_Commits_550"></a><strong>Code
+      Example: Compare Commits</strong></h3>
+  <pre><code class="has-line-data" data-line-start="552" data-line-end="558" class="language-bash"><span class="hljs-comment"># Show differences between branches</span>
+git diff main feature-branch
+
+<span class="hljs-comment"># Compare two commits</span>
+git diff &lt;commit1&gt; &lt;commit2&gt;
+</code></pre>
+  <h3 class="code-line" data-line-start=559 data-line-end=560><a id="Key_Concepts_559"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="560" data-line-end="562"><code>git diff</code> displays differences
+      between files or commits.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=564 data-line-end=565><a id="32_Aliases_564"></a><strong>32. Aliases</strong>
+  </h2>
+  <h3 class="code-line" data-line-start=566 data-line-end=567><a id="Code_Example_Create_Shortcuts_566"></a><strong>Code
+      Example: Create Shortcuts</strong></h3>
+  <pre><code class="has-line-data" data-line-start="568" data-line-end="576" class="language-bash"><span class="hljs-comment"># Set up a custom alias</span>
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
+
+<span class="hljs-comment"># Use the alias</span>
+git co main
+</code></pre>
+  <h3 class="code-line" data-line-start=577 data-line-end=578><a id="Key_Concepts_577"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="578" data-line-end="580">Aliases make Git commands shorter and easier to
+      type.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=582 data-line-end=583><a id="33_Summary_of_Best_Practices_582"></a><strong>33.
+      Summary of Best Practices</strong></h2>
+  <ol>
+    <li class="has-line-data" data-line-start="584" data-line-end="585"><strong>Commit often</strong>: Keep commits
+      small, logical, and meaningful.</li>
+    <li class="has-line-data" data-line-start="585" data-line-end="586"><strong>Write clear commit messages</strong>:
+      Follow the “subject + body” structure.</li>
+    <li class="has-line-data" data-line-start="586" data-line-end="587"><strong>Use branches</strong>: Separate
+      features, fixes, and experiments.</li>
+    <li class="has-line-data" data-line-start="587" data-line-end="588"><strong>Clean history</strong>: Use
+      <code>squash</code> and <code>rebase</code> for a tidy history.
+    </li>
+    <li class="has-line-data" data-line-start="588" data-line-end="589"><strong>Avoid force pushes</strong>: Only use
+      <code>git push --force</code> when absolutely necessary.
+    </li>
+    <li class="has-line-data" data-line-start="589" data-line-end="591"><strong>Backup regularly</strong>: Use remotes
+      like GitHub/GitLab for redundancy.</li>
+  </ol>
+  <hr>
+  <h2 class="code-line" data-line-start=593 data-line-end=594><a id="34_Additional_Resources_593"></a><strong>34.
+      Additional Resources</strong></h2>
+  <ol>
+    <li class="has-line-data" data-line-start="595" data-line-end="596"><strong>Official Git Documentation</strong>: <a
+        href="https://git-scm.com/doc">https://git-scm.com/doc</a></li>
+    <li class="has-line-data" data-line-start="596" data-line-end="597"><strong>GitHub Learning Lab</strong>: <a
+        href="https://lab.github.com">https://lab.github.com</a></li>
+    <li class="has-line-data" data-line-start="597" data-line-end="598"><strong>Interactive Git Tutorial</strong>: <a
+        href="https://learngitbranching.js.org">https://learngitbranching.js.org</a></li>
+    <li class="has-line-data" data-line-start="598" data-line-end="600"><strong>Pro Git Book</strong>: <a
+        href="https://git-scm.com/book">https://git-scm.com/book</a></li>
+  </ol>
+  <hr>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <p>&copy; 2024 Vladyslav Tkachov</p>
+    </div>
+    <div class="footer-right">
+      <a href="https://linkedin.com/in/vladyslav-tkachov" target="_blank" class="footer-link">LinkedIn</a>
+      <a href="https://github.com/vladyslav-tkachov" target="_blank" class="footer-link">GitHub</a>
+      <a href="mailto:tkachovvladyslav@gmail.com" class="footer-link">Email</a>
+    </div>
+  </footer>
+  <script type="text/javascript" src="../Js/dark-mode.js"></script>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+
+</html>

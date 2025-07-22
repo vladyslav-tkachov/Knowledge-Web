@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Knowledge Web - Csharp guide</title>
+    <link href="../css/guide.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/images/web_icon/website_icon.png" type="image/x-icon">
+
+</head>
+
+<body id="preview">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-item">Home</a></li>
+                <li><a href="../html/mini_guides_languages.html" class="nav-item">Languages</a></li>
+                <li><a href="../html/mini_guides.html" class="nav-item">General</a></li>
+                <li><a href="../html/mini_guides_rpa.html" class="nav-item">RPA</a></li>
+                <!-- <li><a href="./html/projects.html" class="nav-item">Projects</a></li>
+                        <li><a href="./html/bobbles.html" class="nav-item">Bobbles</a></li> -->
+            </ul>
+            <!-- Dark Mode Button -->
+            <div class="dark-mode-toggle">
+                <button id="dark-mode-btn">🌙 Dark Mode</button>
+            </div>
+        </div>
+    </nav>
+    <h2 class="code-line" data-line-start=0 data-line-end=1><a
+            id="1_Basics_Variables_Data_Types_and_InputOutput_0"></a><strong>1. Basics: Variables, Data Types, and
+            Input/Output</strong></h2>
+    <h3 class="code-line" data-line-start=2 data-line-end=3><a
+            id="Code_Example_Hello_World_Variables_and_Input_2"></a><strong>Code Example: Hello World, Variables, and
+            Input</strong></h3>
+    <pre><code class="has-line-data" data-line-start="4" data-line-end="25" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        <span class="hljs-comment">// Print a greeting</span>
+        Console.WriteLine(<span class="hljs-string">"Hello, C#!"</span>);
+
+        <span class="hljs-comment">// Declare variables</span>
+        <span class="hljs-keyword">string</span> name = <span class="hljs-string">"Alice"</span>;
+        <span class="hljs-keyword">int</span> age = <span class="hljs-number">25</span>;
+        <span class="hljs-keyword">double</span> height = <span class="hljs-number">5.6</span>;
+
+        <span class="hljs-comment">// Input from the user</span>
+        Console.Write(<span class="hljs-string">"Enter your name: "</span>);
+        <span class="hljs-keyword">string</span> userName = Console.ReadLine();
+        Console.WriteLine($<span class="hljs-string">"Hello, {userName}! Welcome to C#!"</span>);
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=26 data-line-end=27><a id="Key_Concepts_26"></a><strong>Key Concepts</strong>
+    </h3>
+    <ul>
+        <li class="has-line-data" data-line-start="27" data-line-end="28"><strong>Variables</strong>: <code>int</code>,
+            <code>double</code>, <code>string</code>, <code>bool</code>, etc.
+        </li>
+        <li class="has-line-data" data-line-start="28" data-line-end="29"><strong>Input</strong>:
+            <code>Console.ReadLine()</code> reads user input as a string.
+        </li>
+        <li class="has-line-data" data-line-start="29" data-line-end="31"><strong>Output</strong>:
+            <code>Console.WriteLine()</code> and <code>Console.Write()</code>.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=33 data-line-end=34><a id="2_Conditional_Statements_33"></a><strong>2.
+            Conditional Statements</strong></h2>
+    <h3 class="code-line" data-line-start=35 data-line-end=36><a id="Code_Example_IfElse_35"></a><strong>Code Example:
+            If/Else</strong></h3>
+    <pre><code class="has-line-data" data-line-start="37" data-line-end="65" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Console.Write(<span class="hljs-string">"Enter your score: "</span>);
+        <span class="hljs-keyword">int</span> score = <span class="hljs-keyword">int</span>.Parse(Console.ReadLine());
+
+        <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">90</span>)
+        {
+            Console.WriteLine(<span class="hljs-string">"Grade: A"</span>);
+        }
+        <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> (<span class="hljs-params">score &gt;= <span class="hljs-number">75</span></span>)
+        </span>{
+            Console.WriteLine(<span class="hljs-string">"Grade: B"</span>);
+        }
+        <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> (<span class="hljs-params">score &gt;= <span class="hljs-number">60</span></span>)
+        </span>{
+            Console.WriteLine(<span class="hljs-string">"Grade: C"</span>);
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            Console.WriteLine(<span class="hljs-string">"Grade: F"</span>);
+        }
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=66 data-line-end=67><a id="Key_Concepts_66"></a><strong>Key Concepts</strong>
+    </h3>
+    <ul>
+        <li class="has-line-data" data-line-start="67" data-line-end="68">Conditions use operators like <code>==</code>,
+            <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.
+        </li>
+        <li class="has-line-data" data-line-start="68" data-line-end="70"><code>int.Parse()</code> converts input to an
+            integer.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=72 data-line-end=73><a id="3_Loops_72"></a><strong>3. Loops</strong></h2>
+    <h3 class="code-line" data-line-start=74 data-line-end=75><a id="Code_Example_For_and_While_74"></a><strong>Code
+            Example: For and While</strong></h3>
+    <pre><code class="has-line-data" data-line-start="76" data-line-end="98" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        <span class="hljs-comment">// For loop</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++)
+        {
+            Console.WriteLine($<span class="hljs-string">"Count: {i}"</span>);
+        }
+
+        <span class="hljs-comment">// While loop</span>
+        <span class="hljs-keyword">int</span> counter = <span class="hljs-number">5</span>;
+        <span class="hljs-keyword">while</span> (counter &gt; <span class="hljs-number">0</span>)
+        {
+            Console.WriteLine($<span class="hljs-string">"Countdown: {counter}"</span>);
+            counter--;
+        }
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=99 data-line-end=100><a id="Key_Concepts_99"></a><strong>Key Concepts</strong>
+    </h3>
+    <ul>
+        <li class="has-line-data" data-line-start="100" data-line-end="101">
+            <code>for (initialization; condition; increment)</code> is great for definite loops.
+        </li>
+        <li class="has-line-data" data-line-start="101" data-line-end="103"><code>while (condition)</code> is ideal for
+            indefinite loops.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=105 data-line-end=106><a id="4_Functions_105"></a><strong>4.
+            Functions</strong></h2>
+    <h3 class="code-line" data-line-start=107 data-line-end=108><a
+            id="Code_Example_Functions_and_Return_Values_107"></a><strong>Code Example: Functions and Return
+            Values</strong></h3>
+    <pre><code class="has-line-data" data-line-start="109" data-line-end="126" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Factorial</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> n</span>)
+    </span>{
+        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span> || n == <span class="hljs-number">1</span>)
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">return</span> n * Factorial(n - <span class="hljs-number">1</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Console.WriteLine($<span class="hljs-string">"Factorial of 5 is {Factorial(5)}"</span>);
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=127 data-line-end=128><a id="Key_Concepts_127"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="128" data-line-end="129">Functions are defined using
+            <code>returnType functionName(parameters)</code>.
+        </li>
+        <li class="has-line-data" data-line-start="129" data-line-end="131">Recursive functions call themselves to solve
+            smaller subproblems.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=133 data-line-end=134><a id="5_Lists_and_Dictionaries_133"></a><strong>5.
+            Lists and Dictionaries</strong></h2>
+    <h3 class="code-line" data-line-start=135 data-line-end=136><a id="Code_Example_Lists_135"></a><strong>Code Example:
+            Lists</strong></h3>
+    <pre><code class="has-line-data" data-line-start="137" data-line-end="151" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        List&lt;<span class="hljs-keyword">string</span>&gt; fruits = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-keyword">string</span>&gt; { <span class="hljs-string">"Apple"</span>, <span class="hljs-string">"Banana"</span>, <span class="hljs-string">"Cherry"</span> };
+        fruits.Add(<span class="hljs-string">"Orange"</span>);
+        Console.WriteLine(fruits[<span class="hljs-number">1</span>]);  <span class="hljs-comment">// Access by index</span>
+        Console.WriteLine(fruits.Count);  <span class="hljs-comment">// Length of the list</span>
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=152 data-line-end=153><a id="Code_Example_Dictionaries_152"></a><strong>Code
+            Example: Dictionaries</strong></h3>
+    <pre><code class="has-line-data" data-line-start="154" data-line-end="173" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Dictionary&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">int</span>&gt; ages = <span class="hljs-keyword">new</span> Dictionary&lt;<span class="hljs-keyword">string</span>, <span class="hljs-keyword">int</span>&gt;
+        {
+            { <span class="hljs-string">"Alice"</span>, <span class="hljs-number">25</span> },
+            { <span class="hljs-string">"Bob"</span>, <span class="hljs-number">30</span> }
+        };
+
+        Console.WriteLine(ages[<span class="hljs-string">"Alice"</span>]);
+        ages[<span class="hljs-string">"Bob"</span>] = <span class="hljs-number">31</span>;  <span class="hljs-comment">// Update a value</span>
+        Console.WriteLine(ages[<span class="hljs-string">"Bob"</span>]);
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=174 data-line-end=175><a id="Key_Concepts_174"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="175" data-line-end="176"><strong>Lists</strong>: Dynamic collections
+            of items.</li>
+        <li class="has-line-data" data-line-start="176" data-line-end="178"><strong>Dictionaries</strong>: Key-value
+            pairs for efficient lookups.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=180 data-line-end=181><a id="6_Classes_and_OOP_180"></a><strong>6. Classes and
+            OOP</strong></h2>
+    <h3 class="code-line" data-line-start=182 data-line-end=183><a
+            id="Code_Example_ObjectOriented_Programming_182"></a><strong>Code Example: Object-Oriented
+            Programming</strong></h3>
+    <pre><code class="has-line-data" data-line-start="184" data-line-end="212" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Name { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Age { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Dog</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> name, <span class="hljs-keyword">int</span> age</span>)
+    </span>{
+        Name = name;
+        Age = age;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> <span class="hljs-title">Bark</span>(<span class="hljs-params"></span>)
+    </span>{
+        <span class="hljs-keyword">return</span> $<span class="hljs-string">"{Name} says Woof!"</span>;
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Dog myDog = <span class="hljs-keyword">new</span> Dog(<span class="hljs-string">"Buddy"</span>, <span class="hljs-number">3</span>);
+        Console.WriteLine(myDog.Bark());
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=213 data-line-end=214><a id="Key_Concepts_213"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="214" data-line-end="215">Classes encapsulate data and behavior.</li>
+        <li class="has-line-data" data-line-start="215" data-line-end="216">Properties like <code>Name</code> use
+            <code>get</code> and <code>set</code>.
+        </li>
+        <li class="has-line-data" data-line-start="216" data-line-end="218">Objects are instances of classes.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=220 data-line-end=221><a id="7_File_Handling_220"></a><strong>7. File
+            Handling</strong></h2>
+    <h3 class="code-line" data-line-start=222 data-line-end=223><a
+            id="Code_Example_ReadWrite_Files_222"></a><strong>Code Example: Read/Write Files</strong></h3>
+    <pre><code class="has-line-data" data-line-start="224" data-line-end="240" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.IO;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        <span class="hljs-comment">// Write to a file</span>
+        File.WriteAllText(<span class="hljs-string">"example.txt"</span>, <span class="hljs-string">"Hello, file handling!"</span>);
+
+        <span class="hljs-comment">// Read from a file</span>
+        <span class="hljs-keyword">string</span> content = File.ReadAllText(<span class="hljs-string">"example.txt"</span>);
+        Console.WriteLine(content);
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=241 data-line-end=242><a id="Key_Concepts_241"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="242" data-line-end="243">Use <code>File.WriteAllText()</code> and
+            <code>File.ReadAllText()</code> for simple file I/O.
+        </li>
+        <li class="has-line-data" data-line-start="243" data-line-end="245">Use <code>StreamWriter</code> or
+            <code>StreamReader</code> for more control.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=247 data-line-end=248><a id="8_Error_Handling_247"></a><strong>8. Error
+            Handling</strong></h2>
+    <h3 class="code-line" data-line-start=249 data-line-end=250><a id="Code_Example_TryExcept_249"></a><strong>Code
+            Example: Try/Except</strong></h3>
+    <pre><code class="has-line-data" data-line-start="251" data-line-end="270" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        <span class="hljs-keyword">try</span>
+        {
+            Console.Write(<span class="hljs-string">"Enter a number: "</span>);
+            <span class="hljs-keyword">int</span> number = <span class="hljs-keyword">int</span>.Parse(Console.ReadLine());
+            Console.WriteLine($<span class="hljs-string">"Square: {number * number}"</span>);
+        }
+        <span class="hljs-keyword">catch</span> (FormatException)
+        {
+            Console.WriteLine(<span class="hljs-string">"That's not a valid number!"</span>);
+        }
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=271 data-line-end=272><a id="Key_Concepts_271"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="272" data-line-end="274">Use <code>try</code>, <code>catch</code>,
+            and optionally <code>finally</code> to handle errors.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=276 data-line-end=277><a
+            id="9_Using_LINQ_Advanced_Querying_276"></a><strong>9. Using LINQ (Advanced Querying)</strong></h2>
+    <h3 class="code-line" data-line-start=278 data-line-end=279><a id="Code_Example_LINQ_on_Lists_278"></a><strong>Code
+            Example: LINQ on Lists</strong></h3>
+    <pre><code class="has-line-data" data-line-start="280" data-line-end="295" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> System.Linq;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        List&lt;<span class="hljs-keyword">int</span>&gt; numbers = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-keyword">int</span>&gt; { <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span> };
+        <span class="hljs-keyword">var</span> evenNumbers = numbers.Where(n =&gt; n % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>).ToList();
+
+        Console.WriteLine(<span class="hljs-keyword">string</span>.Join(<span class="hljs-string">", "</span>, evenNumbers));  <span class="hljs-comment">// Output: 2, 4, 6</span>
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=296 data-line-end=297><a id="Key_Concepts_296"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="297" data-line-end="299">LINQ (Language-Integrated Query) is used for
+            querying collections like lists.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=301 data-line-end=302><a id="10_Advanced_Topics_301"></a><strong>10. Advanced
+            Topics</strong></h2>
+    <h3 class="code-line" data-line-start=303 data-line-end=304><a id="Delegates_303"></a><strong>Delegates</strong>
+    </h3>
+    <pre><code class="has-line-data" data-line-start="305" data-line-end="324" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">delegate</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Operation</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y</span>)</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Add</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y</span>) </span>=&gt; x + y;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Multiply</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y</span>) </span>=&gt; x * y;
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Operation op = Add;
+        Console.WriteLine(op(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>));  <span class="hljs-comment">// Output: 7</span>
+
+        op = Multiply;
+        Console.WriteLine(op(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>));  <span class="hljs-comment">// Output: 12</span>
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=325 data-line-end=326><a id="AsyncAwait_325"></a><strong>Async/Await</strong>
+    </h3>
+    <pre><code class="has-line-data" data-line-start="327" data-line-end="339" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Threading.Tasks;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> Task <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        <span class="hljs-keyword">await</span> Task.Delay(<span class="hljs-number">1000</span>);
+        Console.WriteLine(<span class="hljs-string">"Hello, async world!"</span>);
+    }
+}
+</code></pre>
+    <hr>
+    <h2 class="code-line" data-line-start=342 data-line-end=343><a id="11_Generics_342"></a><strong>11.
+            Generics</strong></h2>
+    <h3 class="code-line" data-line-start=344 data-line-end=345><a
+            id="Code_Example_Generic_Classes_and_Methods_344"></a><strong>Code Example: Generic Classes and
+            Methods</strong></h3>
+    <pre><code class="has-line-data" data-line-start="346" data-line-end="376" class="language-csharp">using System;
+using System.Collections.Generic;
+
+class GenericBox&lt;T&gt;
+{
+    public T Value { get; set; }
+
+    public GenericBox(T value)
+    {
+        Value = value;
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"Value: {Value}");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        GenericBox&lt;int&gt; intBox = new GenericBox&lt;int&gt;(123);
+        GenericBox&lt;string&gt; stringBox = new GenericBox&lt;string&gt;("Hello");
+
+        intBox.Display(); // Output: Value: 123
+        stringBox.Display(); // Output: Value: Hello
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=377 data-line-end=378><a id="Key_Concepts_377"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="378" data-line-end="379">Generics provide type safety while
+            maintaining flexibility.</li>
+        <li class="has-line-data" data-line-start="379" data-line-end="381">Avoids redundant code by allowing
+            methods/classes to work with any data type.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=383 data-line-end=384><a id="12_Events_and_Delegates_383"></a><strong>12.
+            Events and Delegates</strong></h2>
+    <h3 class="code-line" data-line-start=385 data-line-end=386><a
+            id="Code_Example_Custom_Event_Handling_385"></a><strong>Code Example: Custom Event Handling</strong></h3>
+    <pre><code class="has-line-data" data-line-start="387" data-line-end="412" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Alarm</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">delegate</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AlarmTriggeredEventHandler</span>(<span class="hljs-params"></span>)</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">event</span> AlarmTriggeredEventHandler AlarmTriggered;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Trigger</span>(<span class="hljs-params"></span>)
+    </span>{
+        Console.WriteLine(<span class="hljs-string">"Alarm Triggered!"</span>);
+        AlarmTriggered?.Invoke();
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Alarm alarm = <span class="hljs-keyword">new</span> Alarm();
+        alarm.AlarmTriggered += () =&gt; Console.WriteLine(<span class="hljs-string">"Take action!"</span>);
+
+        alarm.Trigger(); <span class="hljs-comment">// Output: Alarm Triggered! Take action!</span>
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=413 data-line-end=414><a id="Key_Concepts_413"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="414" data-line-end="415"><strong>Delegates</strong>: Type-safe
+            pointers to methods.</li>
+        <li class="has-line-data" data-line-start="415" data-line-end="417"><strong>Events</strong>: Encapsulation of
+            delegate invocation, ensuring controlled usage.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=419 data-line-end=420><a id="13_Extension_Methods_419"></a><strong>13.
+            Extension Methods</strong></h2>
+    <h3 class="code-line" data-line-start=421 data-line-end=422><a
+            id="Code_Example_Adding_New_Methods_421"></a><strong>Code Example: Adding New Methods</strong></h3>
+    <pre><code class="has-line-data" data-line-start="423" data-line-end="444" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">StringExtensions</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">string</span> <span class="hljs-title">Reverse</span>(<span class="hljs-params"><span class="hljs-keyword">this</span> <span class="hljs-keyword">string</span> str</span>)
+    </span>{
+        <span class="hljs-keyword">char</span>[] charArray = str.ToCharArray();
+        Array.Reverse(charArray);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">string</span>(charArray);
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        <span class="hljs-keyword">string</span> message = <span class="hljs-string">"Hello, World!"</span>;
+        Console.WriteLine(message.Reverse()); <span class="hljs-comment">// Output: !dlroW ,olleH</span>
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=445 data-line-end=446><a id="Key_Concepts_445"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="446" data-line-end="447">Adds methods to existing classes without
+            modifying their source code.</li>
+        <li class="has-line-data" data-line-start="447" data-line-end="449">Must be in a static class and marked with
+            the <code>this</code> keyword.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=451 data-line-end=452><a id="14_Reflection_451"></a><strong>14.
+            Reflection</strong></h2>
+    <h3 class="code-line" data-line-start=453 data-line-end=454><a
+            id="Code_Example_Inspecting_Metadata_453"></a><strong>Code Example: Inspecting Metadata</strong></h3>
+    <pre><code class="has-line-data" data-line-start="455" data-line-end="473" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Reflection;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Type type = <span class="hljs-keyword">typeof</span>(<span class="hljs-keyword">string</span>);
+        Console.WriteLine($<span class="hljs-string">"Type: {type.FullName}"</span>);
+
+        MethodInfo[] methods = type.GetMethods();
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> method <span class="hljs-keyword">in</span> methods)
+        {
+            Console.WriteLine(method.Name);
+        }
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=474 data-line-end=475><a id="Key_Concepts_474"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="475" data-line-end="476">Reflection enables runtime type inspection.
+        </li>
+        <li class="has-line-data" data-line-start="476" data-line-end="478">Use cases include plugins, dependency
+            injection, and serialization.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=480 data-line-end=481><a id="15_Threading_480"></a><strong>15.
+            Threading</strong></h2>
+    <h3 class="code-line" data-line-start=482 data-line-end=483><a id="Code_Example_Multithreading_482"></a><strong>Code
+            Example: Multi-threading</strong></h3>
+    <pre><code class="has-line-data" data-line-start="484" data-line-end="506" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Threading;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">PrintNumbers</span>(<span class="hljs-params"></span>)
+    </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++)
+        {
+            Console.WriteLine($<span class="hljs-string">"Number: {i}"</span>);
+            Thread.Sleep(<span class="hljs-number">500</span>); <span class="hljs-comment">// Simulate work</span>
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Thread thread = <span class="hljs-keyword">new</span> Thread(PrintNumbers);
+        thread.Start();
+        Console.WriteLine(<span class="hljs-string">"Main thread continues..."</span>);
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=507 data-line-end=508><a id="Key_Concepts_507"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="508" data-line-end="509"><code>Thread</code> enables concurrent
+            execution of code.</li>
+        <li class="has-line-data" data-line-start="509" data-line-end="511">Use <code>Thread.Sleep</code> for delays.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=513 data-line-end=514><a id="16_Task_Parallel_Library_TPL_513"></a><strong>16.
+            Task Parallel Library (TPL)</strong></h2>
+    <h3 class="code-line" data-line-start=515 data-line-end=516><a
+            id="Code_Example_Parallel_Programming_515"></a><strong>Code Example: Parallel Programming</strong></h3>
+    <pre><code class="has-line-data" data-line-start="517" data-line-end="531" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Threading.Tasks;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> Task <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Task task1 = Task.Run(() =&gt; Console.WriteLine(<span class="hljs-string">"Task 1"</span>));
+        Task task2 = Task.Run(() =&gt; Console.WriteLine(<span class="hljs-string">"Task 2"</span>));
+
+        <span class="hljs-keyword">await</span> Task.WhenAll(task1, task2);
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=532 data-line-end=533><a id="Key_Concepts_532"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="533" data-line-end="534">TPL provides better thread management than
+            manual threading.</li>
+        <li class="has-line-data" data-line-start="534" data-line-end="536">Use <code>Task</code> for scalable parallel
+            programming.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=538 data-line-end=539><a id="17_LINQ_Advanced_Operations_538"></a><strong>17.
+            LINQ: Advanced Operations</strong></h2>
+    <h3 class="code-line" data-line-start=540 data-line-end=541><a
+            id="Code_Example_Grouping_and_Sorting_540"></a><strong>Code Example: Grouping and Sorting</strong></h3>
+    <pre><code class="has-line-data" data-line-start="542" data-line-end="561" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> System.Linq;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        List&lt;<span class="hljs-keyword">string</span>&gt; fruits = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-keyword">string</span>&gt; { <span class="hljs-string">"Apple"</span>, <span class="hljs-string">"Banana"</span>, <span class="hljs-string">"Cherry"</span>, <span class="hljs-string">"Apple"</span> };
+
+        <span class="hljs-keyword">var</span> groupedFruits = fruits.GroupBy(f =&gt; f).OrderBy(g =&gt; g.Key);
+
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> <span class="hljs-keyword">group</span> <span class="hljs-keyword">in</span> groupedFruits)
+        {
+            Console.WriteLine($<span class="hljs-string">"{group.Key}: {group.Count()}"</span>);
+        }
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=562 data-line-end=563><a id="Key_Concepts_562"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="563" data-line-end="564">LINQ supports grouping, sorting, and
+            aggregation over collections.</li>
+        <li class="has-line-data" data-line-start="564" data-line-end="566">Common LINQ methods: <code>GroupBy</code>,
+            <code>OrderBy</code>, <code>SelectMany</code>.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=568 data-line-end=569><a id="18_Dependency_Injection_568"></a><strong>18.
+            Dependency Injection</strong></h2>
+    <h3 class="code-line" data-line-start=570 data-line-end=571><a
+            id="Code_Example_Constructor_Injection_570"></a><strong>Code Example: Constructor Injection</strong></h3>
+    <pre><code class="has-line-data" data-line-start="572" data-line-end="606" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title">ILogger</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Log</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> message</span>)</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">ConsoleLogger</span> : <span class="hljs-title">ILogger</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Log</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> message</span>) </span>=&gt; Console.WriteLine(message);
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Application</span>
+{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> ILogger _logger;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Application</span>(<span class="hljs-params">ILogger logger</span>)
+    </span>{
+        _logger = logger;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Run</span>(<span class="hljs-params"></span>) </span>=&gt; _logger.Log(<span class="hljs-string">"Application is running."</span>);
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        ILogger logger = <span class="hljs-keyword">new</span> ConsoleLogger();
+        Application app = <span class="hljs-keyword">new</span> Application(logger);
+        app.Run(); <span class="hljs-comment">// Output: Application is running.</span>
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=607 data-line-end=608><a id="Key_Concepts_607"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="608" data-line-end="609">Separates object creation from business
+            logic.</li>
+        <li class="has-line-data" data-line-start="609" data-line-end="611">Improves testability and maintainability.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=613 data-line-end=614><a id="19_Design_Patterns_613"></a><strong>19. Design
+            Patterns</strong></h2>
+    <h3 class="code-line" data-line-start=615 data-line-end=616><a id="Code_Example_Singleton_615"></a><strong>Code
+            Example: Singleton</strong></h3>
+    <pre><code class="has-line-data" data-line-start="617" data-line-end="638" class="language-csharp"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span>
+{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton _instance;
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span>(<span class="hljs-params"></span>) </span>{ }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton Instance =&gt; _instance ??= <span class="hljs-keyword">new</span> Singleton();
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Singleton s1 = Singleton.Instance;
+        Singleton s2 = Singleton.Instance;
+        Console.WriteLine(s1 == s2); <span class="hljs-comment">// Output: True</span>
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=639 data-line-end=640><a id="Key_Concepts_639"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="640" data-line-end="641">Singleton ensures a class has only one
+            instance.</li>
+        <li class="has-line-data" data-line-start="641" data-line-end="643">Common design patterns: Factory, Observer,
+            Strategy.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=645 data-line-end=646><a id="20_Unit_Testing_645"></a><strong>20. Unit
+            Testing</strong></h2>
+    <h3 class="code-line" data-line-start=647 data-line-end=648><a id="Code_Example_Using_NUnit_647"></a><strong>Code
+            Example: Using NUnit</strong></h3>
+    <pre><code class="has-line-data" data-line-start="649" data-line-end="667" class="language-csharp"><span class="hljs-keyword">using</span> NUnit.Framework;
+
+[TestFixture]
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">CalculatorTests</span>
+{
+    [Test]
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Add_AddsTwoNumbers_ReturnsSum</span>(<span class="hljs-params"></span>)
+    </span>{
+        <span class="hljs-keyword">int</span> result = Calculator.Add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+        Assert.AreEqual(<span class="hljs-number">5</span>, result);
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Calculator</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Add</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y</span>) </span>=&gt; x + y;
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=668 data-line-end=669><a id="Key_Concepts_668"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="669" data-line-end="670">Use frameworks like NUnit, MSTest, or xUnit.
+        </li>
+        <li class="has-line-data" data-line-start="670" data-line-end="672">Write tests to ensure reliability.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=674 data-line-end=675><a id="21_Asynchronous_Programming_674"></a><strong>21.
+            Asynchronous Programming</strong></h2>
+    <h3 class="code-line" data-line-start=676 data-line-end=677><a
+            id="Code_Example_AsyncAwait_with_File_IO_676"></a><strong>Code Example: Async/Await with File I/O</strong>
+    </h3>
+    <pre><code class="has-line-data" data-line-start="678" data-line-end="694" class="language-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.IO;
+<span class="hljs-keyword">using</span> System.Threading.Tasks;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> Task <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        <span class="hljs-keyword">string</span> content = <span class="hljs-string">"Hello, async file handling!"</span>;
+        <span class="hljs-keyword">await</span> File.WriteAllTextAsync(<span class="hljs-string">"example.txt"</span>, content);
+
+        <span class="hljs-keyword">string</span> result = <span class="hljs-keyword">await</span> File.ReadAllTextAsync(<span class="hljs-string">"example.txt"</span>);
+        Console.WriteLine(result);
+    }
+}
+</code></pre>
+    <h3 class="code-line" data-line-start=695 data-line-end=696><a id="Key_Concepts_695"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="696" data-line-end="698">Asynchronous programming improves
+            application responsiveness.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=700 data-line-end=701><a id="22_C_Best_Practices_700"></a><strong>22. C# Best
+            Practices</strong></h2>
+    <ol>
+        <li class="has-line-data" data-line-start="701" data-line-end="702"><strong>Use <code>var</code>
+                wisely</strong>: For readability, avoid overuse.</li>
+        <li class="has-line-data" data-line-start="702" data-line-end="703"><strong>Error handling</strong>: Always
+            handle exceptions with <code>try/catch</code>.</li>
+        <li class="has-line-data" data-line-start="703" data-line-end="704"><strong>Naming conventions</strong>: Use
+            PascalCase for methods/classes and camelCase for variables.</li>
+        <li class="has-line-data" data-line-start="704" data-line-end="705"><strong>Immutable types</strong>: Use
+            <code>readonly</code> and <code>const</code> where applicable.
+        </li>
+        <li class="has-line-data" data-line-start="705" data-line-end="707"><strong>Avoid magic numbers</strong>: Use
+            named constants.</li>
+    </ol>
+    <hr>
+    <h3 class="code-line" data-line-start=709 data-line-end=710><a id="Resources_709"></a><strong>Resources</strong>
+    </h3>
+    <ol>
+        <li class="has-line-data" data-line-start="710" data-line-end="711"><a
+                href="https://learn.microsoft.com/en-us/dotnet/csharp/">C# Documentation (Microsoft)</a></li>
+        <li class="has-line-data" data-line-start="711" data-line-end="712"><a
+                href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/">C# Programming Guide</a></li>
+        <li class="has-line-data" data-line-start="712" data-line-end="714"><a href="https://nunit.org/">NUnit
+                Documentation</a></li>
+    </ol>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>&copy; 2024 Vladyslav Tkachov</p>
+        </div>
+        <div class="footer-right">
+            <a href="https://linkedin.com/in/vladyslav-tkachov" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="https://github.com/vladyslav-tkachov" target="_blank" class="footer-link">GitHub</a>
+            <a href="mailto:tkachovvladyslav@gmail.com" class="footer-link">Email</a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../Js/dark-mode.js"></script>
+
+</body>
+
+</html>

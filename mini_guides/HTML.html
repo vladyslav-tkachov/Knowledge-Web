@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Knowledge Web - HTML guide</title>
+    <link rel="stylesheet" href="../css/guide.css">
+    <link rel="shortcut icon" href="../assets/images/web_icon/website_icon.png" type="image/x-icon">
+
+</head>
+
+<body id="preview">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-item">Home</a></li>
+                <li><a href="../html/mini_guides_languages.html" class="nav-item">Languages</a></li>
+                <li><a href="../html/mini_guides.html" class="nav-item">General</a></li>
+                <li><a href="../html/mini_guides_rpa.html" class="nav-item">RPA</a></li>
+                <!-- <li><a href="./html/projects.html" class="nav-item">Projects</a></li>
+                                    <li><a href="./html/bobbles.html" class="nav-item">Bobbles</a></li> -->
+            </ul>
+            <!-- Dark Mode Button -->
+            <div class="dark-mode-toggle">
+                <button id="dark-mode-btn">🌙 Dark Mode</button>
+            </div>
+        </div>
+    </nav>
+    <h2 class="code-line" data-line-start=0 data-line-end=1><a
+            id="1_Basics_Structure_of_an_HTML_Document_0"></a><strong>1. Basics: Structure of an HTML Document</strong>
+    </h2>
+    <h3 class="code-line" data-line-start=2 data-line-end=3><a id="Code_Example_Basic_HTML_Skeleton_2"></a><strong>Code
+            Example: Basic HTML Skeleton</strong></h3>
+    <pre><code class="has-line-data" data-line-start="4" data-line-end="17" class="language-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>My First HTML Page<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello, HTML!<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is a simple webpage.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=18 data-line-end=19><a id="Key_Concepts_18"></a><strong>Key Concepts</strong>
+    </h3>
+    <ul>
+        <li class="has-line-data" data-line-start="19" data-line-end="20">
+            <strong><code>&lt;!DOCTYPE html&gt;</code></strong>: Declares the document type.
+        </li>
+        <li class="has-line-data" data-line-start="20" data-line-end="21"><strong><code>&lt;html&gt;</code></strong>:
+            Root element of the page.</li>
+        <li class="has-line-data" data-line-start="21" data-line-end="22"><strong><code>&lt;head&gt;</code></strong>:
+            Metadata about the page (not visible to users).</li>
+        <li class="has-line-data" data-line-start="22" data-line-end="24"><strong><code>&lt;body&gt;</code></strong>:
+            Content displayed on the page.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=26 data-line-end=27><a id="2_Headings_and_Paragraphs_26"></a><strong>2.
+            Headings and Paragraphs</strong></h2>
+    <h3 class="code-line" data-line-start=28 data-line-end=29><a id="Code_Example_Text_Content_28"></a><strong>Code
+            Example: Text Content</strong></h3>
+    <pre><code class="has-line-data" data-line-start="30" data-line-end="35" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Main Heading<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Subheading<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is a paragraph of text.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>You can add <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>bold<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> or <span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>italic<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span> text.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=36 data-line-end=37><a id="Key_Concepts_36"></a><strong>Key Concepts</strong>
+    </h3>
+    <ul>
+        <li class="has-line-data" data-line-start="37" data-line-end="38">Headings range from <code>&lt;h1&gt;</code>
+            (largest) to <code>&lt;h6&gt;</code> (smallest).</li>
+        <li class="has-line-data" data-line-start="38" data-line-end="39"><code>&lt;p&gt;</code>: Paragraphs.</li>
+        <li class="has-line-data" data-line-start="39" data-line-end="43"><strong>Text Formatting</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="40" data-line-end="41"><code>&lt;strong&gt;</code>: Bold
+                    text.</li>
+                <li class="has-line-data" data-line-start="41" data-line-end="43"><code>&lt;em&gt;</code>: Italics.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=45 data-line-end=46><a id="3_Links_and_Images_45"></a><strong>3. Links and
+            Images</strong></h2>
+    <h3 class="code-line" data-line-start=47 data-line-end=48><a id="Code_Example_Hyperlinks_47"></a><strong>Code
+            Example: Hyperlinks</strong></h3>
+    <pre><code class="has-line-data" data-line-start="49" data-line-end="51" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"https://www.google.com"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span>&gt;</span>Visit Google<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=52 data-line-end=53><a id="Code_Example_Images_52"></a><strong>Code Example:
+            Images</strong></h3>
+    <pre><code class="has-line-data" data-line-start="54" data-line-end="56" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"image.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"A descriptive text about the image"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"300"</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=57 data-line-end=58><a id="Key_Concepts_57"></a><strong>Key Concepts</strong>
+    </h3>
+    <ul>
+        <li class="has-line-data" data-line-start="58" data-line-end="59"><code>&lt;a&gt;</code>: Anchor tag for links.
+            <code>target=&quot;_blank&quot;</code> opens in a new tab.
+        </li>
+        <li class="has-line-data" data-line-start="59" data-line-end="61"><code>&lt;img&gt;</code>: Embeds images.
+            Always include <code>alt</code> for accessibility.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=63 data-line-end=64><a id="4_Lists_63"></a><strong>4. Lists</strong></h2>
+    <h3 class="code-line" data-line-start=65 data-line-end=66><a
+            id="Code_Example_Ordered_and_Unordered_Lists_65"></a><strong>Code Example: Ordered and Unordered
+            Lists</strong></h3>
+    <pre><code class="has-line-data" data-line-start="67" data-line-end="81" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Unordered List:<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Apple<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Banana<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Cherry<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Ordered List:<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ol</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Step 1<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Step 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Step 3<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=82 data-line-end=83><a id="Key_Concepts_82"></a><strong>Key Concepts</strong>
+    </h3>
+    <ul>
+        <li class="has-line-data" data-line-start="83" data-line-end="84"><code>&lt;ul&gt;</code>: Unordered list
+            (bullets).</li>
+        <li class="has-line-data" data-line-start="84" data-line-end="85"><code>&lt;ol&gt;</code>: Ordered list
+            (numbers).</li>
+        <li class="has-line-data" data-line-start="85" data-line-end="87"><code>&lt;li&gt;</code>: List item.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=89 data-line-end=90><a id="5_Tables_89"></a><strong>5. Tables</strong></h2>
+    <h3 class="code-line" data-line-start=91 data-line-end=92><a id="Code_Example_Basic_Table_91"></a><strong>Code
+            Example: Basic Table</strong></h3>
+    <pre><code class="has-line-data" data-line-start="93" data-line-end="112" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">border</span>=<span class="hljs-value">"1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Age<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Alice<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>25<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Bob<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>30<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=113 data-line-end=114><a id="Key_Concepts_113"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="114" data-line-end="120"><strong>Table Elements</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="115" data-line-end="116"><code>&lt;table&gt;</code>: The
+                    table container.</li>
+                <li class="has-line-data" data-line-start="116" data-line-end="117"><code>&lt;tr&gt;</code>: Table row.
+                </li>
+                <li class="has-line-data" data-line-start="117" data-line-end="118"><code>&lt;td&gt;</code>: Table cell.
+                </li>
+                <li class="has-line-data" data-line-start="118" data-line-end="120"><code>&lt;th&gt;</code>: Header
+                    cell.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=122 data-line-end=123><a id="6_Forms_122"></a><strong>6. Forms</strong></h2>
+    <h3 class="code-line" data-line-start=124 data-line-end=125><a id="Code_Example_Input_Fields_124"></a><strong>Code
+            Example: Input Fields</strong></h3>
+    <pre><code class="has-line-data" data-line-start="126" data-line-end="136" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"/submit"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"POST"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"name"</span>&gt;</span>Name:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"name"</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"age"</span>&gt;</span>Age:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"age"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"age"</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=137 data-line-end=138><a id="Key_Concepts_137"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="138" data-line-end="139"><code>&lt;form&gt;</code>: Wraps input
+            fields and buttons.</li>
+        <li class="has-line-data" data-line-start="139" data-line-end="140"><code>&lt;input&gt;</code>: Text, numbers,
+            passwords, etc.</li>
+        <li class="has-line-data" data-line-start="140" data-line-end="142"><code>&lt;button&gt;</code>: Submits the
+            form.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=144 data-line-end=145><a id="7_Divs_and_Spans_144"></a><strong>7. Divs and
+            Spans</strong></h2>
+    <h3 class="code-line" data-line-start=146 data-line-end=147><a
+            id="Code_Example_Layout_Containers_146"></a><strong>Code Example: Layout Containers</strong></h3>
+    <pre><code class="has-line-data" data-line-start="148" data-line-end="155" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-color: lightgray; padding: 10px;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Div Example<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is a block-level container.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"color: red;"</span>&gt;</span>This is inline text.<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=156 data-line-end=157><a id="Key_Concepts_156"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="157" data-line-end="158"><code>&lt;div&gt;</code>: Block-level
+            container for grouping content.</li>
+        <li class="has-line-data" data-line-start="158" data-line-end="160"><code>&lt;span&gt;</code>: Inline container
+            for small elements.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=162 data-line-end=163><a id="8_Multimedia_162"></a><strong>8.
+            Multimedia</strong></h2>
+    <h3 class="code-line" data-line-start=164 data-line-end=165><a id="Code_Example_Audio_164"></a><strong>Code Example:
+            Audio</strong></h3>
+    <pre><code class="has-line-data" data-line-start="166" data-line-end="171" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">controls</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"audio.mp3"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"audio/mpeg"</span>&gt;</span>
+    Your browser does not support the audio element.
+<span class="hljs-tag">&lt;/<span class="hljs-title">audio</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=172 data-line-end=173><a id="Code_Example_Video_172"></a><strong>Code Example:
+            Video</strong></h3>
+    <pre><code class="has-line-data" data-line-start="174" data-line-end="179" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">controls</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"500"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"video.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/mp4"</span>&gt;</span>
+    Your browser does not support the video tag.
+<span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=180 data-line-end=181><a id="Key_Concepts_180"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="181" data-line-end="182"><code>&lt;audio&gt;</code> and
+            <code>&lt;video&gt;</code> embed media players.
+        </li>
+        <li class="has-line-data" data-line-start="182" data-line-end="184">Use <code>&lt;source&gt;</code> to provide
+            multiple formats for compatibility.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=186 data-line-end=187><a id="9_Semantic_HTML_186"></a><strong>9. Semantic
+            HTML</strong></h2>
+    <h3 class="code-line" data-line-start=188 data-line-end=189><a
+            id="Code_Example_Semantic_Elements_188"></a><strong>Code Example: Semantic Elements</strong></h3>
+    <pre><code class="has-line-data" data-line-start="190" data-line-end="211" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Website Title<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#home"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"home"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Welcome<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is the home section.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"about"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>About Us<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Information about our website.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">main</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>&amp;copy; 2024 My Website<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=212 data-line-end=213><a id="Key_Concepts_212"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="213" data-line-end="215"><strong>Semantic tags</strong> like
+            <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+            <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> improve structure and accessibility.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=217 data-line-end=218><a
+            id="10_Inline_CSS_and_External_Stylesheets_217"></a><strong>10. Inline CSS and External Stylesheets</strong>
+    </h2>
+    <h3 class="code-line" data-line-start=219 data-line-end=220><a id="Code_Example_Inline_CSS_219"></a><strong>Code
+            Example: Inline CSS</strong></h3>
+    <pre><code class="has-line-data" data-line-start="221" data-line-end="223" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"color: blue; font-size: 18px;"</span>&gt;</span>This text is styled inline.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=224 data-line-end=225><a
+            id="Code_Example_External_Stylesheet_224"></a><strong>Code Example: External Stylesheet</strong></h3>
+    <pre><code class="has-line-data" data-line-start="226" data-line-end="229" class="language-html"><span class="hljs-comment">&lt;!-- Link to external stylesheet --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"styles.css"</span>&gt;</span>
+</code></pre>
+    <pre><code class="has-line-data" data-line-start="231" data-line-end="237" class="language-css"><span class="hljs-comment">/* styles.css */</span>
+<span class="hljs-tag">body</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Arial, sans-serif</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#f0f0f0</span></span></span>;
+}</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=238 data-line-end=239><a id="Key_Concepts_238"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="239" data-line-end="240">Inline CSS styles are quick but not
+            reusable.</li>
+        <li class="has-line-data" data-line-start="240" data-line-end="242">Use external stylesheets for consistent,
+            reusable styling.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=244 data-line-end=245><a id="11_JavaScript_in_HTML_244"></a><strong>11.
+            JavaScript in HTML</strong></h2>
+    <h3 class="code-line" data-line-start=246 data-line-end=247><a id="Code_Example_Inline_Script_246"></a><strong>Code
+            Example: Inline Script</strong></h3>
+    <pre><code class="has-line-data" data-line-start="248" data-line-end="254" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">"DOMContentLoaded"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Page loaded!"</span>);
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=255 data-line-end=256><a
+            id="Code_Example_External_Script_255"></a><strong>Code Example: External Script</strong></h3>
+    <pre><code class="has-line-data" data-line-start="257" data-line-end="260" class="language-html"><span class="hljs-comment">&lt;!-- Link to external JavaScript --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"script.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+    <pre><code class="has-line-data" data-line-start="262" data-line-end="265" class="language-javascript"><span class="hljs-comment">// script.js</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello from external JavaScript!"</span>);
+</code></pre>
+    <hr>
+    <h2 class="code-line" data-line-start=268 data-line-end=269><a id="12_Advanced_Topics_268"></a><strong>12. Advanced
+            Topics</strong></h2>
+    <h3 class="code-line" data-line-start=270 data-line-end=271><a id="Meta_Tags_270"></a><strong>Meta Tags</strong>
+    </h3>
+    <pre><code class="has-line-data" data-line-start="272" data-line-end="276" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"description"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"Learn HTML quickly!"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"author"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"John Doe"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=277 data-line-end=278><a id="Favicons_277"></a><strong>Favicons</strong></h3>
+    <pre><code class="has-line-data" data-line-start="279" data-line-end="281" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"icon"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"favicon.ico"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"image/x-icon"</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=282 data-line-end=283><a id="Responsive_Design_282"></a><strong>Responsive
+            Design</strong></h3>
+    <pre><code class="has-line-data" data-line-start="284" data-line-end="292" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+    <span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">600px</span>) </span>{
+        <span class="hljs-tag">body</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> lightblue</span></span>;
+        }</span>
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+</code></pre>
+    <hr>
+    <h2 class="code-line" data-line-start=295 data-line-end=296><a
+            id="16_Metadata_and_the_head_Section_295"></a><strong>16. Metadata and the <code>&lt;head&gt;</code>
+            Section</strong></h2>
+    <h3 class="code-line" data-line-start=297 data-line-end=298><a
+            id="Code_Example_Metadata_in_Action_297"></a><strong>Code Example: Metadata in Action</strong></h3>
+    <pre><code class="has-line-data" data-line-start="299" data-line-end="310" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"description"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"A complete guide to HTML."</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"author"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"John Doe"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"keywords"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"HTML, Web Development, Guide"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Advanced HTML Concepts<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"styles.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"icon"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"favicon.ico"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"image/x-icon"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=311 data-line-end=312><a id="Key_Concepts_311"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="312" data-line-end="313">
+            <strong><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></strong>: Ensures proper encoding for
+            characters.
+        </li>
+        <li class="has-line-data" data-line-start="313" data-line-end="314">
+            <strong><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code></strong>:
+            Makes websites responsive.
+        </li>
+        <li class="has-line-data" data-line-start="314" data-line-end="316"><strong>Favicon
+                (<code>&lt;link rel=&quot;icon&quot;&gt;</code>)</strong>: Adds a small icon for browser tabs.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=318 data-line-end=319><a id="17_Forms_Advanced_Features_318"></a><strong>17.
+            Forms: Advanced Features</strong></h2>
+    <h3 class="code-line" data-line-start=320 data-line-end=321><a
+            id="Code_Example_Validation_and_File_Upload_320"></a><strong>Code Example: Validation and File
+            Upload</strong></h3>
+    <pre><code class="has-line-data" data-line-start="322" data-line-end="332" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"/submit"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"POST"</span> <span class="hljs-attribute">enctype</span>=<span class="hljs-value">"multipart/form-data"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"username"</span>&gt;</span>Username:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"username"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"username"</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">minlength</span>=<span class="hljs-value">"5"</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">"15"</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"file"</span>&gt;</span>Upload a File:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">accept</span>=<span class="hljs-value">".jpg, .png, .gif"</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=333 data-line-end=334><a id="Key_Features_333"></a><strong>Key
+            Features</strong></h3>
+    <ol>
+        <li class="has-line-data" data-line-start="334" data-line-end="339">
+            <p class="has-line-data" data-line-start="334" data-line-end="335"><strong>Validation Attributes</strong>:
+            </p>
+            <ul>
+                <li class="has-line-data" data-line-start="335" data-line-end="336"><code>required</code>: Makes a field
+                    mandatory.</li>
+                <li class="has-line-data" data-line-start="336" data-line-end="337"><code>minlength</code> and
+                    <code>maxlength</code>: Limits text input length.
+                </li>
+                <li class="has-line-data" data-line-start="337" data-line-end="339"><code>accept</code>: Specifies
+                    acceptable file types.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="339" data-line-end="342">
+            <p class="has-line-data" data-line-start="339" data-line-end="340"><strong>Enctype</strong>:</p>
+            <ul>
+                <li class="has-line-data" data-line-start="340" data-line-end="342"><code>multipart/form-data</code>:
+                    Required for file uploads.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 class="code-line" data-line-start=344 data-line-end=345><a id="18_Tables_Merging_Cells_344"></a><strong>18.
+            Tables: Merging Cells</strong></h2>
+    <h3 class="code-line" data-line-start=346 data-line-end=347><a
+            id="Code_Example_Spanning_Rows_and_Columns_346"></a><strong>Code Example: Spanning Rows and Columns</strong>
+    </h3>
+    <pre><code class="has-line-data" data-line-start="348" data-line-end="367" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">border</span>=<span class="hljs-value">"1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Age<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"2"</span>&gt;</span>Contact Information<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>John<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>30<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="91fbfef9ffd1f4e9f0fce1fdf4bff2fefc">[email&#160;protected]</a><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>+123456789<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">rowspan</span>=<span class="hljs-value">"2"</span>&gt;</span>Alice<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>25<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"2"</span>&gt;</span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="51303d383234113429303c213d347f323e3c">[email&#160;protected]</a><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=368 data-line-end=369><a id="Key_Features_368"></a><strong>Key
+            Features</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="369" data-line-end="370"><strong><code>colspan</code></strong>: Spans
+            columns.</li>
+        <li class="has-line-data" data-line-start="370" data-line-end="372"><strong><code>rowspan</code></strong>: Spans
+            rows.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=374 data-line-end=375><a
+            id="19_Audio_and_Video_Advanced_Features_374"></a><strong>19. Audio and Video: Advanced Features</strong>
+    </h2>
+    <h3 class="code-line" data-line-start=376 data-line-end=377><a
+            id="Code_Example_Audio_and_Video_Attributes_376"></a><strong>Code Example: Audio and Video
+            Attributes</strong></h3>
+    <pre><code class="has-line-data" data-line-start="378" data-line-end="388" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">controls</span> <span class="hljs-attribute">loop</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"audio.mp3"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"audio/mpeg"</span>&gt;</span>
+    Your browser does not support the audio tag.
+<span class="hljs-tag">&lt;/<span class="hljs-title">audio</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">controls</span> <span class="hljs-attribute">autoplay</span> <span class="hljs-attribute">muted</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"video.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/mp4"</span>&gt;</span>
+    Your browser does not support the video tag.
+<span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=389 data-line-end=390><a id="Key_Features_389"></a><strong>Key
+            Features</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="390" data-line-end="394">
+            <p class="has-line-data" data-line-start="390" data-line-end="391"><strong>Audio Attributes</strong>:</p>
+            <ul>
+                <li class="has-line-data" data-line-start="391" data-line-end="392"><code>loop</code>: Replays the
+                    audio.</li>
+                <li class="has-line-data" data-line-start="392" data-line-end="394"><code>controls</code>: Displays
+                    playback controls.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="394" data-line-end="398">
+            <p class="has-line-data" data-line-start="394" data-line-end="395"><strong>Video Attributes</strong>:</p>
+            <ul>
+                <li class="has-line-data" data-line-start="395" data-line-end="396"><code>autoplay</code>: Plays
+                    automatically.</li>
+                <li class="has-line-data" data-line-start="396" data-line-end="398"><code>muted</code>: Starts the video
+                    with sound muted.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=400 data-line-end=401><a
+            id="20_Semantic_Tags_Additional_Examples_400"></a><strong>20. Semantic Tags: Additional Examples</strong>
+    </h2>
+    <h3 class="code-line" data-line-start=402 data-line-end=403><a
+            id="Code_Example_Enhanced_Structure_402"></a><strong>Code Example: Enhanced Structure</strong></h3>
+    <pre><code class="has-line-data" data-line-start="404" data-line-end="415" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">header</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Article Title<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Published on <span class="hljs-tag">&lt;<span class="hljs-title">time</span> <span class="hljs-attribute">datetime</span>=<span class="hljs-value">"2024-12-12"</span>&gt;</span>December 12, 2024<span class="hljs-tag">&lt;/<span class="hljs-title">time</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is the content of the article.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">footer</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Written by John Doe<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=416 data-line-end=417><a id="Key_Semantic_Tags_416"></a><strong>Key Semantic
+            Tags</strong>:</h3>
+    <ul>
+        <li class="has-line-data" data-line-start="417" data-line-end="418">
+            <strong><code>&lt;article&gt;</code></strong>: Independent content like a blog post.
+        </li>
+        <li class="has-line-data" data-line-start="418" data-line-end="419"><strong><code>&lt;time&gt;</code></strong>:
+            Machine-readable dates.</li>
+        <li class="has-line-data" data-line-start="419" data-line-end="421">
+            <strong><code>&lt;footer&gt;</code></strong>: Footer of a section or document.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=423 data-line-end=424><a id="21_The_iframe_Tag_423"></a><strong>21. The
+            <code>&lt;iframe&gt;</code> Tag</strong></h2>
+    <h3 class="code-line" data-line-start=425 data-line-end=426><a
+            id="Code_Example_Embedding_Websites_425"></a><strong>Code Example: Embedding Websites</strong></h3>
+    <pre><code class="has-line-data" data-line-start="427" data-line-end="429" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">iframe</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://www.example.com"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"600"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"400"</span> <span class="hljs-attribute">frameborder</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">iframe</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=430 data-line-end=431><a id="Key_Concepts_430"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="431" data-line-end="436"><strong>Attributes</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="432" data-line-end="433"><code>src</code>: URL of the
+                    embedded content.</li>
+                <li class="has-line-data" data-line-start="433" data-line-end="434"><code>frameborder</code>: Border
+                    visibility (deprecated; use CSS instead).</li>
+                <li class="has-line-data" data-line-start="434" data-line-end="436"><code>sandbox</code>: Restricts
+                    iframe functionality for security.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=438 data-line-end=439><a id="22_HTML_Entities_438"></a><strong>22. HTML
+            Entities</strong></h2>
+    <h3 class="code-line" data-line-start=440 data-line-end=441><a
+            id="Code_Example_Displaying_Special_Characters_440"></a><strong>Code Example: Displaying Special
+            Characters</strong></h3>
+    <pre><code class="has-line-data" data-line-start="442" data-line-end="446" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>&amp;lt;This is a tag&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>&amp;copy; 2024 My Company<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>&amp;#9731; (Snowflake symbol)<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=447 data-line-end=448><a id="Key_Concepts_447"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="448" data-line-end="455">Use entities for special characters:
+            <ul>
+                <li class="has-line-data" data-line-start="449" data-line-end="450"><code>&lt;</code> →
+                    <code>&amp;lt;</code>
+                </li>
+                <li class="has-line-data" data-line-start="450" data-line-end="451"><code>&gt;</code> →
+                    <code>&amp;gt;</code>
+                </li>
+                <li class="has-line-data" data-line-start="451" data-line-end="452"><code>&amp;</code> →
+                    <code>&amp;amp;</code>
+                </li>
+                <li class="has-line-data" data-line-start="452" data-line-end="453"><code>©</code> →
+                    <code>&amp;copy;</code>
+                </li>
+                <li class="has-line-data" data-line-start="453" data-line-end="455">Unicode symbols:
+                    <code>&amp;#9731;</code>.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=457 data-line-end=458><a id="23_The_canvas_Tag_457"></a><strong>23. The
+            <code>&lt;canvas&gt;</code> Tag</strong></h2>
+    <h3 class="code-line" data-line-start=459 data-line-end=460><a id="Code_Example_Drawing_Shapes_459"></a><strong>Code
+            Example: Drawing Shapes</strong></h3>
+    <pre><code class="has-line-data" data-line-start="461" data-line-end="470" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">canvas</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"myCanvas"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"400"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"400"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">canvas</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myCanvas'</span>);
+    <span class="hljs-keyword">const</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>);
+    ctx.fillStyle = <span class="hljs-string">'blue'</span>;
+    ctx.fillRect(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>); <span class="hljs-comment">// Draws a blue rectangle</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=471 data-line-end=472><a id="Key_Concepts_471"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="472" data-line-end="473">The <code>&lt;canvas&gt;</code> tag is used
+            for graphics, animations, and games.</li>
+        <li class="has-line-data" data-line-start="473" data-line-end="475">JavaScript is required for functionality.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=477 data-line-end=478><a
+            id="24_ARIA_Accessible_Rich_Internet_Applications_477"></a><strong>24. ARIA (Accessible Rich Internet
+            Applications)</strong></h2>
+    <h3 class="code-line" data-line-start=479 data-line-end=480><a
+            id="Code_Example_Accessibility_with_ARIA_479"></a><strong>Code Example: Accessibility with ARIA</strong>
+    </h3>
+    <pre><code class="has-line-data" data-line-start="481" data-line-end="487" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Submit form"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"alert"</span>&gt;</span>
+    This is an important alert message!
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=488 data-line-end=489><a id="Key_Concepts_488"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="489" data-line-end="490"><strong><code>aria-label</code></strong>:
+            Describes the purpose of an element for screen readers.</li>
+        <li class="has-line-data" data-line-start="490" data-line-end="492"><strong><code>role</code></strong>: Defines
+            the role of an element (e.g., <code>alert</code>, <code>button</code>, <code>navigation</code>).</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=494 data-line-end=495><a id="25_Progressive_Enhancement_494"></a><strong>25.
+            Progressive Enhancement</strong></h2>
+    <h3 class="code-line" data-line-start=496 data-line-end=497><a
+            id="Code_Example_Default_Functionality_with_JS_Enhancement_496"></a><strong>Code Example: Default
+            Functionality with JS Enhancement</strong></h3>
+    <pre><code class="has-line-data" data-line-start="498" data-line-end="507" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/download"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"download-link"</span>&gt;</span>Download File<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'download-link'</span>).addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+        e.preventDefault();
+        alert(<span class="hljs-string">'File will download in a moment.'</span>);
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=508 data-line-end=509><a id="Key_Concepts_508"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="509" data-line-end="510">Ensure the website works without JavaScript.
+        </li>
+        <li class="has-line-data" data-line-start="510" data-line-end="512">Add advanced features for browsers that
+            support them.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=514 data-line-end=515><a
+            id="26_The_details_and_summary_Tags_514"></a><strong>26. The <code>&lt;details&gt;</code> and
+            <code>&lt;summary&gt;</code> Tags</strong></h2>
+    <h3 class="code-line" data-line-start=516 data-line-end=517><a
+            id="Code_Example_Collapsible_Content_516"></a><strong>Code Example: Collapsible Content</strong></h3>
+    <pre><code class="has-line-data" data-line-start="518" data-line-end="523" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">details</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">summary</span>&gt;</span>Click to reveal more information<span class="hljs-tag">&lt;/<span class="hljs-title">summary</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is the hidden content that appears when you click.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">details</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=524 data-line-end=525><a id="Key_Features_524"></a><strong>Key
+            Features</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="525" data-line-end="526">Native HTML support for
+            expandable/collapsible sections.</li>
+        <li class="has-line-data" data-line-start="526" data-line-end="528">Works without JavaScript.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=530 data-line-end=531><a id="27_Custom_Data_Attributes_530"></a><strong>27.
+            Custom Data Attributes</strong></h2>
+    <h3 class="code-line" data-line-start=532 data-line-end=533><a
+            id="Code_Example_Using_data_Attributes_532"></a><strong>Code Example: Using <code>data-</code>
+            Attributes</strong></h3>
+    <pre><code class="has-line-data" data-line-start="534" data-line-end="542" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">data-id</span>=<span class="hljs-value">"1234"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"handleClick(this)"</span>&gt;</span>Click Me<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleClick</span>(<span class="hljs-params">button</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(button.dataset.id); <span class="hljs-comment">// Logs "1234"</span>
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+    <h3 class="code-line" data-line-start=543 data-line-end=544><a id="Key_Concepts_543"></a><strong>Key
+            Concepts</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="544" data-line-end="546"><strong><code>data-*</code>
+                Attributes</strong> allow custom attributes to store metadata.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=548 data-line-end=549><a
+            id="28_Best_Practices_for_Writing_HTML_548"></a><strong>28. Best Practices for Writing HTML</strong></h2>
+    <ol>
+        <li class="has-line-data" data-line-start="550" data-line-end="551"><strong>Use Semantic Tags</strong>: Prefer
+            <code>&lt;article&gt;</code> over <code>&lt;div&gt;</code> when applicable.
+        </li>
+        <li class="has-line-data" data-line-start="551" data-line-end="554"><strong>Keep it Accessible</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="552" data-line-end="553">Use <code>alt</code> for images.
+                </li>
+                <li class="has-line-data" data-line-start="553" data-line-end="554">Add <code>aria-*</code> for
+                    assistive technologies.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="554" data-line-end="556"><strong>Indentation</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="555" data-line-end="556">Use consistent indentation (2 or 4
+                    spaces).</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="556" data-line-end="558"><strong>Minimize Inline Styles</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="557" data-line-end="558">Use external stylesheets for
+                    maintainability.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="558" data-line-end="561"><strong>Validate Your Code</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="559" data-line-end="561">Use tools like <a
+                        href="https://validator.w3.org/">W3C Validator</a> to catch errors.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 class="code-line" data-line-start=563 data-line-end=564><a id="Additional_Resources_563"></a><strong>Additional
+            Resources</strong></h3>
+    <ol>
+        <li class="has-line-data" data-line-start="564" data-line-end="565"><a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML MDN Docs</a></li>
+        <li class="has-line-data" data-line-start="565" data-line-end="566"><a href="https://html.spec.whatwg.org/">HTML
+                Living Standard</a></li>
+        <li class="has-line-data" data-line-start="566" data-line-end="567"><a href="https://validator.w3.org/">HTML
+                Validator</a></li>
+    </ol>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>&copy; 2024 Vladyslav Tkachov</p>
+        </div>
+        <div class="footer-right">
+            <a href="https://linkedin.com/in/vladyslav-tkachov" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="https://github.com/vladyslav-tkachov" target="_blank" class="footer-link">GitHub</a>
+            <a href="mailto:tkachovvladyslav@gmail.com" class="footer-link">Email</a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../Js/dark-mode.js"></script>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Knowledge Web - Regex guide</title>
+    <link rel="stylesheet" href="../css/guide.css">
+    <link rel="shortcut icon" href="../assets/images/web_icon/website_icon.png" type="image/x-icon">
+
+</head>
+
+<body id="preview">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-item">Home</a></li>
+                <li><a href="../html/mini_guides_languages.html" class="nav-item">Languages</a></li>
+                <li><a href="../html/mini_guides.html" class="nav-item">General</a></li>
+                <li><a href="../html/mini_guides_rpa.html" class="nav-item">RPA</a></li>
+                <!-- <li><a href="./html/projects.html" class="nav-item">Projects</a></li>
+                                <li><a href="./html/bobbles.html" class="nav-item">Bobbles</a></li> -->
+            </ul>
+            <!-- Dark Mode Button -->
+            <div class="dark-mode-toggle">
+                <button id="dark-mode-btn">🌙 Dark Mode</button>
+            </div>
+        </div>
+    </nav>
+    <h1 class="code-line" data-line-start=0 data-line-end=1><a
+            id="Regular_Expressions_Regex_A_Comprehensive_Guide_0"></a><strong>Regular Expressions (Regex): A
+            Comprehensive Guide</strong></h1>
+    <p class="has-line-data" data-line-start="2" data-line-end="3">Regular expressions (regex) are powerful tools used
+        for pattern matching and text manipulation. They are widely used in programming, data validation, and text
+        processing tasks.</p>
+    <hr>
+    <h2 class="code-line" data-line-start=6 data-line-end=7><a id="1_What_Are_Regular_Expressions_6"></a><strong>1. What
+            Are Regular Expressions?</strong></h2>
+    <p class="has-line-data" data-line-start="7" data-line-end="8">Regular expressions are sequences of characters
+        defining a search pattern. They are often used to validate input, search for specific patterns in text, and
+        perform text replacements.</p>
+    <h3 class="code-line" data-line-start=9 data-line-end=10><a id="Use_Cases_9"></a><strong>Use Cases</strong></h3>
+    <ol>
+        <li class="has-line-data" data-line-start="10" data-line-end="12"><strong>Validation</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="11" data-line-end="12">Checking if an email, phone number, or
+                    password meets specific criteria.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="12" data-line-end="14"><strong>Search and Replace</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="13" data-line-end="14">Finding and replacing text in
+                    documents or code.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="14" data-line-end="16"><strong>Data Extraction</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="15" data-line-end="16">Extracting specific information from
+                    logs, files, or web data.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="16" data-line-end="19"><strong>String Manipulation</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="17" data-line-end="19">Breaking down or formatting data
+                    strings.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 class="code-line" data-line-start=21 data-line-end=22><a id="2_Basic_Syntax_and_Elements_21"></a><strong>2.
+            Basic Syntax and Elements</strong></h2>
+    <h3 class="code-line" data-line-start=23 data-line-end=24><a id="Literals_23"></a><strong>Literals</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="24" data-line-end="25">Matches exact characters in the pattern.</li>
+        <li class="has-line-data" data-line-start="25" data-line-end="27">Example: <code>abc</code> matches the string
+            “abc” exactly.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=27 data-line-end=28><a
+            id="Metacharacters_27"></a><strong>Metacharacters</strong></h3>
+    <p class="has-line-data" data-line-start="28" data-line-end="29">These characters have special meanings in regex:
+    </p>
+    <ul>
+        <li class="has-line-data" data-line-start="29" data-line-end="30"><strong><code>.</code></strong>: Matches any
+            single character except a newline.</li>
+        <li class="has-line-data" data-line-start="30" data-line-end="31"><strong><code>^</code></strong>: Matches the
+            start of a string.</li>
+        <li class="has-line-data" data-line-start="31" data-line-end="32"><strong><code>$</code></strong>: Matches the
+            end of a string.</li>
+        <li class="has-line-data" data-line-start="32" data-line-end="34"><strong><code>\</code></strong>: Escapes a
+            special character to match it literally.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=34 data-line-end=35><a id="Quantifiers_34"></a><strong>Quantifiers</strong>
+    </h3>
+    <p class="has-line-data" data-line-start="35" data-line-end="36">Define the number of times an element can occur:
+    </p>
+    <ul>
+        <li class="has-line-data" data-line-start="36" data-line-end="37"><strong><code>*</code></strong>: 0 or more
+            times.</li>
+        <li class="has-line-data" data-line-start="37" data-line-end="38"><strong><code>+</code></strong>: 1 or more
+            times.</li>
+        <li class="has-line-data" data-line-start="38" data-line-end="39"><strong><code>?</code></strong>: 0 or 1 time.
+        </li>
+        <li class="has-line-data" data-line-start="39" data-line-end="40"><strong><code>{n}</code></strong>: Exactly n
+            times.</li>
+        <li class="has-line-data" data-line-start="40" data-line-end="41"><strong><code>{n,}</code></strong>: At least n
+            times.</li>
+        <li class="has-line-data" data-line-start="41" data-line-end="43"><strong><code>{n,m}</code></strong>: Between n
+            and m times.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=43 data-line-end=44><a id="Character_Classes_43"></a><strong>Character
+            Classes</strong></h3>
+    <p class="has-line-data" data-line-start="44" data-line-end="45">Specify a set of characters to match:</p>
+    <ul>
+        <li class="has-line-data" data-line-start="45" data-line-end="46"><strong><code>[abc]</code></strong>: Matches
+            any character <code>a</code>, <code>b</code>, or <code>c</code>.</li>
+        <li class="has-line-data" data-line-start="46" data-line-end="47"><strong><code>[^abc]</code></strong>: Matches
+            any character except <code>a</code>, <code>b</code>, or <code>c</code>.</li>
+        <li class="has-line-data" data-line-start="47" data-line-end="48"><strong><code>[a-z]</code></strong>: Matches
+            any lowercase letter.</li>
+        <li class="has-line-data" data-line-start="48" data-line-end="49"><strong><code>\d</code></strong>: Matches any
+            digit (equivalent to <code>[0-9]</code>).</li>
+        <li class="has-line-data" data-line-start="49" data-line-end="50"><strong><code>\w</code></strong>: Matches any
+            word character (alphanumeric or <code>_</code>).</li>
+        <li class="has-line-data" data-line-start="50" data-line-end="52"><strong><code>\s</code></strong>: Matches any
+            whitespace character (spaces, tabs, etc.).</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=54 data-line-end=55><a id="3_Anchors_54"></a><strong>3. Anchors</strong></h2>
+    <h3 class="code-line" data-line-start=56 data-line-end=57><a id="Boundary_Matchers_56"></a><strong>Boundary
+            Matchers</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="57" data-line-end="58"><strong><code>^</code></strong>: Matches the
+            start of a string.</li>
+        <li class="has-line-data" data-line-start="58" data-line-end="59"><strong><code>$</code></strong>: Matches the
+            end of a string.</li>
+        <li class="has-line-data" data-line-start="59" data-line-end="61"><strong><code>\b</code></strong>: Matches a
+            word boundary.
+            <ul>
+                <li class="has-line-data" data-line-start="60" data-line-end="61">Example: <code>\bcat\b</code> matches
+                    “cat” but not “catapult”.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="61" data-line-end="63"><strong><code>\B</code></strong>: Matches a
+            position that is not a word boundary.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=65 data-line-end=66><a id="4_Groups_and_Captures_65"></a><strong>4. Groups and
+            Captures</strong></h2>
+    <h3 class="code-line" data-line-start=67 data-line-end=68><a id="Capturing_Groups_67"></a><strong>Capturing
+            Groups</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="68" data-line-end="69">Use parentheses <code>()</code> to create
+            capturing groups.</li>
+        <li class="has-line-data" data-line-start="69" data-line-end="71">Example: <code>(abc)</code> captures the
+            substring “abc”.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=71 data-line-end=72><a id="NonCapturing_Groups_71"></a><strong>Non-Capturing
+            Groups</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="72" data-line-end="73">Use <code>(?:...)</code> for groups you don’t
+            want to capture.</li>
+        <li class="has-line-data" data-line-start="73" data-line-end="75">Example: <code>(?:abc)</code> matches “abc”
+            without storing it.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=75 data-line-end=76><a
+            id="Backreferences_75"></a><strong>Backreferences</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="76" data-line-end="77">Refer to captured groups within the regex or
+            replacement string.</li>
+        <li class="has-line-data" data-line-start="77" data-line-end="79">Example: <code>(\w+)\s\1</code> matches
+            repeated words like “hello hello”.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=81 data-line-end=82><a id="5_Lookaheads_and_Lookbehinds_81"></a><strong>5.
+            Lookaheads and Lookbehinds</strong></h2>
+    <h3 class="code-line" data-line-start=83 data-line-end=84><a id="Lookaheads_83"></a><strong>Lookaheads</strong></h3>
+    <p class="has-line-data" data-line-start="84" data-line-end="85">Assert that a pattern follows the current position:
+    </p>
+    <ul>
+        <li class="has-line-data" data-line-start="85" data-line-end="87"><strong>Positive Lookahead</strong>:
+            <code>(?=...)</code>
+            <ul>
+                <li class="has-line-data" data-line-start="86" data-line-end="87">Example: <code>\d(?= dollars)</code>
+                    matches digits followed by &quot; dollars&quot;.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="87" data-line-end="90"><strong>Negative Lookahead</strong>:
+            <code>(?!...)</code>
+            <ul>
+                <li class="has-line-data" data-line-start="88" data-line-end="90">Example: <code>\d(?! dollars)</code>
+                    matches digits not followed by &quot; dollars&quot;.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=90 data-line-end=91><a id="Lookbehinds_90"></a><strong>Lookbehinds</strong>
+    </h3>
+    <p class="has-line-data" data-line-start="91" data-line-end="92">Assert that a pattern precedes the current
+        position:</p>
+    <ul>
+        <li class="has-line-data" data-line-start="92" data-line-end="94"><strong>Positive Lookbehind</strong>:
+            <code>(?&lt;=...)</code>
+            <ul>
+                <li class="has-line-data" data-line-start="93" data-line-end="94">Example: <code>(?&lt;=USD )\d+</code>
+                    matches digits preceded by &quot;USD &quot;.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="94" data-line-end="97"><strong>Negative Lookbehind</strong>:
+            <code>(?&lt;!...)</code>
+            <ul>
+                <li class="has-line-data" data-line-start="95" data-line-end="97">Example: <code>(?&lt;!USD )\d+</code>
+                    matches digits not preceded by &quot;USD &quot;.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=99 data-line-end=100><a id="6_Flags_Modifiers_99"></a><strong>6. Flags
+            (Modifiers)</strong></h2>
+    <p class="has-line-data" data-line-start="101" data-line-end="102">Flags modify the behavior of the regex engine:
+    </p>
+    <ul>
+        <li class="has-line-data" data-line-start="102" data-line-end="103"><strong><code>i</code></strong>:
+            Case-insensitive matching.</li>
+        <li class="has-line-data" data-line-start="103" data-line-end="104"><strong><code>g</code></strong>: Global
+            search (matches all occurrences).</li>
+        <li class="has-line-data" data-line-start="104" data-line-end="105"><strong><code>m</code></strong>: Multiline
+            mode (<code>^</code> and <code>$</code> match line boundaries).</li>
+        <li class="has-line-data" data-line-start="105" data-line-end="106"><strong><code>s</code></strong>: Dot-all
+            mode (<code>.</code> matches newlines).</li>
+        <li class="has-line-data" data-line-start="106" data-line-end="108"><strong><code>x</code></strong>: Ignore
+            whitespace in the pattern for readability.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=110 data-line-end=111><a id="7_Advanced_Patterns_110"></a><strong>7. Advanced
+            Patterns</strong></h2>
+    <h3 class="code-line" data-line-start=112 data-line-end=113><a id="Alternation_112"></a><strong>Alternation</strong>
+    </h3>
+    <ul>
+        <li class="has-line-data" data-line-start="113" data-line-end="114">Use <code>|</code> to match one of several
+            patterns.</li>
+        <li class="has-line-data" data-line-start="114" data-line-end="116">Example: <code>cat|dog</code> matches “cat”
+            or “dog”.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=116 data-line-end=117><a id="Named_Groups_116"></a><strong>Named
+            Groups</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="117" data-line-end="118">Assign names to capturing groups for
+            readability.</li>
+        <li class="has-line-data" data-line-start="118" data-line-end="120">Example:
+            <code>(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})</code> captures <code>year</code> and <code>month</code>.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=122 data-line-end=123><a id="8_Practical_Examples_122"></a><strong>8.
+            Practical Examples</strong></h2>
+    <h3 class="code-line" data-line-start=124 data-line-end=125><a id="Email_Validation_124"></a><strong>Email
+            Validation</strong></h3>
+    <pre><code class="has-line-data" data-line-start="126" data-line-end="128" class="language-regex">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+</code></pre>
+    <h3 class="code-line" data-line-start=129 data-line-end=130><a id="Phone_Number_Validation_129"></a><strong>Phone
+            Number Validation</strong></h3>
+    <pre><code class="has-line-data" data-line-start="131" data-line-end="133" class="language-regex">^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$
+</code></pre>
+    <h3 class="code-line" data-line-start=134 data-line-end=135><a id="Extracting_URLs_134"></a><strong>Extracting
+            URLs</strong></h3>
+    <pre><code class="has-line-data" data-line-start="136" data-line-end="138" class="language-regex">https?:\/\/[^\s]+
+</code></pre>
+    <h3 class="code-line" data-line-start=139 data-line-end=140><a id="Password_Validation_139"></a><strong>Password
+            Validation</strong></h3>
+    <pre><code class="has-line-data" data-line-start="141" data-line-end="143" class="language-regex">^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$
+</code></pre>
+    <hr>
+    <h2 class="code-line" data-line-start=146 data-line-end=147><a id="9_Performance_Optimization_146"></a><strong>9.
+            Performance Optimization</strong></h2>
+    <h3 class="code-line" data-line-start=148 data-line-end=149><a id="Tips_for_Efficiency_148"></a><strong>Tips for
+            Efficiency</strong></h3>
+    <ol>
+        <li class="has-line-data" data-line-start="149" data-line-end="150">Avoid using <code>.*</code> unless
+            necessary, as it is greedy and can cause inefficiency.</li>
+        <li class="has-line-data" data-line-start="150" data-line-end="151">Use specific character classes or
+            quantifiers instead of general ones.</li>
+        <li class="has-line-data" data-line-start="151" data-line-end="153">Anchor patterns with <code>^</code> and
+            <code>$</code> to restrict searches to relevant parts of the text.
+        </li>
+    </ol>
+    <hr>
+    <h2 class="code-line" data-line-start=155 data-line-end=156><a id="10_Regex_Tools_and_Resources_155"></a><strong>10.
+            Regex Tools and Resources</strong></h2>
+    <h3 class="code-line" data-line-start=157 data-line-end=158><a id="Online_Tools_157"></a><strong>Online
+            Tools</strong></h3>
+    <ol>
+        <li class="has-line-data" data-line-start="158" data-line-end="159"><strong>Regex101</strong>: Interactive regex
+            tester with explanations.</li>
+        <li class="has-line-data" data-line-start="159" data-line-end="160"><strong>Regexr</strong>: Visual regex editor
+            and tester.</li>
+        <li class="has-line-data" data-line-start="160" data-line-end="162"><strong>Debuggex</strong>: Visualize and
+            debug regex patterns.</li>
+    </ol>
+    <h3 class="code-line" data-line-start=162 data-line-end=163><a
+            id="Libraries_and_Languages_162"></a><strong>Libraries and Languages</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="163" data-line-end="164">Python: <code>re</code> module.</li>
+        <li class="has-line-data" data-line-start="164" data-line-end="165">JavaScript: Built-in regex support with
+            <code>/pattern/flags</code>.
+        </li>
+        <li class="has-line-data" data-line-start="165" data-line-end="166">Java: <code>java.util.regex</code>.</li>
+        <li class="has-line-data" data-line-start="166" data-line-end="168">.NET:
+            <code>System.Text.RegularExpressions</code>.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=170 data-line-end=171><a id="11_Common_Pitfalls_170"></a><strong>11. Common
+            Pitfalls</strong></h2>
+    <h3 class="code-line" data-line-start=172 data-line-end=173><a id="1_Overmatching_172"></a><strong>1.
+            Overmatching</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="173" data-line-end="176">Using overly broad patterns can match
+            unintended text.
+            <ul>
+                <li class="has-line-data" data-line-start="174" data-line-end="176">Example: <code>.*</code> matches
+                    everything, including unwanted content.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=176 data-line-end=177><a id="2_Escaping_Issues_176"></a><strong>2. Escaping
+            Issues</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="177" data-line-end="180">Forgetting to escape special characters can
+            cause errors.
+            <ul>
+                <li class="has-line-data" data-line-start="178" data-line-end="180">Example: Use <code>\.</code> to
+                    match a literal period.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=180 data-line-end=181><a id="3_Readability_180"></a><strong>3.
+            Readability</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="181" data-line-end="184">Complex patterns are hard to read and
+            maintain.
+            <ul>
+                <li class="has-line-data" data-line-start="182" data-line-end="184">Solution: Use comments and
+                    whitespace with the <code>x</code> flag.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=186 data-line-end=187><a id="12_Regex_Cheat_Sheet_186"></a><strong>12. Regex
+            Cheat Sheet</strong></h2>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th><strong>Pattern</strong></th>
+                <th><strong>Description</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>.</code></td>
+                <td>Any character except newline.</td>
+            </tr>
+            <tr>
+                <td><code>\d</code></td>
+                <td>Digit (0-9).</td>
+            </tr>
+            <tr>
+                <td><code>\D</code></td>
+                <td>Non-digit.</td>
+            </tr>
+            <tr>
+                <td><code>\w</code></td>
+                <td>Word character (alphanumeric).</td>
+            </tr>
+            <tr>
+                <td><code>\W</code></td>
+                <td>Non-word character.</td>
+            </tr>
+            <tr>
+                <td><code>\s</code></td>
+                <td>Whitespace (space, tab, newline).</td>
+            </tr>
+            <tr>
+                <td><code>\S</code></td>
+                <td>Non-whitespace.</td>
+            </tr>
+            <tr>
+                <td><code>[abc]</code></td>
+                <td>Any of <code>a</code>, <code>b</code>, or <code>c</code>.</td>
+            </tr>
+            <tr>
+                <td><code>[^abc]</code></td>
+                <td>Not <code>a</code>, <code>b</code>, or <code>c</code>.</td>
+            </tr>
+            <tr>
+                <td><code>a|b</code></td>
+                <td><code>a</code> or <code>b</code>.</td>
+            </tr>
+            <tr>
+                <td><code>(abc)</code></td>
+                <td>Capturing group.</td>
+            </tr>
+            <tr>
+                <td><code>(?:abc)</code></td>
+                <td>Non-capturing group.</td>
+            </tr>
+            <tr>
+                <td><code>(?=abc)</code></td>
+                <td>Positive lookahead.</td>
+            </tr>
+            <tr>
+                <td><code>(?!abc)</code></td>
+                <td>Negative lookahead.</td>
+            </tr>
+            <tr>
+                <td><code>(?&lt;=abc)</code></td>
+                <td>Positive lookbehind.</td>
+            </tr>
+            <tr>
+                <td><code>(?&lt;!abc)</code></td>
+                <td>Negative lookbehind.</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 class="code-line" data-line-start=209 data-line-end=210><a id="Conclusion_209"></a><strong>Conclusion</strong>
+    </h2>
+    <p class="has-line-data" data-line-start="211" data-line-end="212">Regular expressions are versatile tools that
+        simplify pattern matching and text manipulation tasks. By mastering regex syntax and leveraging tools
+        effectively, you can handle a wide range of applications, from input validation to complex data extraction. With
+        practice, regex becomes an invaluable skill for developers, data analysts, and IT professionals.</p>
+    <hr>
+    <h1 class="code-line" data-line-start=214 data-line-end=215><a
+            id="Expanded_Guide_to_Regular_Expressions_Regex_214"></a><strong>Expanded Guide to Regular Expressions
+            (Regex)</strong></h1>
+    <p class="has-line-data" data-line-start="216" data-line-end="217">Regular expressions (regex) are an indispensable
+        tool for text processing, offering unmatched power and flexibility for pattern matching and text manipulation.
+        Below is an expanded guide covering additional concepts, best practices, and advanced use cases to provide a
+        complete understanding of regex.</p>
+    <hr>
+    <h2 class="code-line" data-line-start=220 data-line-end=221><a
+            id="13_How_Regex_Works_Behind_the_Scenes_220"></a><strong>13. How Regex Works Behind the Scenes</strong>
+    </h2>
+    <p class="has-line-data" data-line-start="222" data-line-end="223">Understanding how regex engines process patterns
+        can help write more efficient expressions.</p>
+    <h3 class="code-line" data-line-start=224 data-line-end=225><a id="Two_Types_of_Regex_Engines_224"></a><strong>Two
+            Types of Regex Engines</strong></h3>
+    <ol>
+        <li class="has-line-data" data-line-start="225" data-line-end="228"><strong>DFA (Deterministic Finite
+                Automaton)</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="226" data-line-end="227">Processes patterns faster but lacks
+                    advanced features like backtracking.</li>
+                <li class="has-line-data" data-line-start="227" data-line-end="228">Used in tools like <code>grep</code>
+                    and <code>awk</code>.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="228" data-line-end="232"><strong>NFA (Non-Deterministic Finite
+                Automaton)</strong>:
+            <ul>
+                <li class="has-line-data" data-line-start="229" data-line-end="230">Allows features like backtracking
+                    and lookaheads.</li>
+                <li class="has-line-data" data-line-start="230" data-line-end="232">Used in most modern programming
+                    languages like Python, Java, and JavaScript.</li>
+            </ul>
+        </li>
+    </ol>
+    <h3 class="code-line" data-line-start=232 data-line-end=233><a id="Greedy_vs_Lazy_Matching_232"></a><strong>Greedy
+            vs. Lazy Matching</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="233" data-line-end="235"><strong>Greedy Matching</strong>: Matches as
+            much text as possible.
+            <ul>
+                <li class="has-line-data" data-line-start="234" data-line-end="235">Example: <code>a.*b</code> matches
+                    from the first <code>a</code> to the last <code>b</code>.</li>
+            </ul>
+        </li>
+        <li class="has-line-data" data-line-start="235" data-line-end="238"><strong>Lazy Matching</strong>: Matches as
+            little text as possible, using <code>*?</code>, <code>+?</code>, or <code>??</code>.
+            <ul>
+                <li class="has-line-data" data-line-start="236" data-line-end="238">Example: <code>a.*?b</code> matches
+                    from the first <code>a</code> to the next <code>b</code>.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=240 data-line-end=241><a id="14_Advanced_Regex_Concepts_240"></a><strong>14.
+            Advanced Regex Concepts</strong></h2>
+    <h3 class="code-line" data-line-start=242 data-line-end=243><a id="Unicode_Support_242"></a><strong>Unicode
+            Support</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="243" data-line-end="244">Modern regex engines support Unicode for
+            matching text in various languages.</li>
+        <li class="has-line-data" data-line-start="244" data-line-end="245">Example: <code>\p{L}</code> matches any
+            Unicode letter.</li>
+        <li class="has-line-data" data-line-start="245" data-line-end="247"><strong>Flags</strong>: Use the
+            <code>u</code> flag in JavaScript or equivalent to enable Unicode.
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=247 data-line-end=248><a id="Atomic_Groups_247"></a><strong>Atomic
+            Groups</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="248" data-line-end="249">Prevent backtracking within a group.</li>
+        <li class="has-line-data" data-line-start="249" data-line-end="250">Syntax: <code>(?&gt;...)</code>.</li>
+        <li class="has-line-data" data-line-start="250" data-line-end="252">Example: <code>(?&gt;a*)b</code> matches as
+            many <code>a</code>s as possible, followed by <code>b</code>, without backtracking.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=252 data-line-end=253><a
+            id="Conditional_Expressions_252"></a><strong>Conditional Expressions</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="253" data-line-end="254">Match patterns based on conditions.</li>
+        <li class="has-line-data" data-line-start="254" data-line-end="255">Syntax:
+            <code>(?(condition)yes-pattern|no-pattern)</code>.
+        </li>
+        <li class="has-line-data" data-line-start="255" data-line-end="257">Example: <code>(?(1)abc|def)</code> matches
+            <code>abc</code> if group 1 exists, otherwise matches <code>def</code>.
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=259 data-line-end=260><a id="15_Specialized_Use_Cases_259"></a><strong>15.
+            Specialized Use Cases</strong></h2>
+    <h3 class="code-line" data-line-start=261 data-line-end=262><a id="1_Data_Validation_261"></a><strong>1. Data
+            Validation</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="262" data-line-end="266"><strong>URLs</strong>:
+            <pre><code class="has-line-data" data-line-start="264" data-line-end="266" class="language-regex">https?:\/\/(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
+</code></pre>
+        </li>
+        <li class="has-line-data" data-line-start="266" data-line-end="271"><strong>Dates (YYYY-MM-DD)</strong>:
+            <pre><code class="has-line-data" data-line-start="268" data-line-end="270" class="language-regex">^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=271 data-line-end=272><a id="2_Log_Parsing_271"></a><strong>2. Log
+            Parsing</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="272" data-line-end="276">Extract IP addresses:
+            <pre><code class="has-line-data" data-line-start="274" data-line-end="276" class="language-regex">\b\d{1,3}(\.\d{1,3}){3}\b
+</code></pre>
+        </li>
+        <li class="has-line-data" data-line-start="276" data-line-end="281">Extract timestamps:
+            <pre><code class="has-line-data" data-line-start="278" data-line-end="280" class="language-regex">\b\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=281 data-line-end=282><a
+            id="3_Natural_Language_Processing_NLP_281"></a><strong>3. Natural Language Processing (NLP)</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="282" data-line-end="286">Match hashtags in social media text:
+            <pre><code class="has-line-data" data-line-start="284" data-line-end="286" class="language-regex">#\w+
+</code></pre>
+        </li>
+        <li class="has-line-data" data-line-start="286" data-line-end="291">Extract quoted text:
+            <pre><code class="has-line-data" data-line-start="288" data-line-end="290" class="language-regex">&quot;(.*?)&quot;
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=291 data-line-end=292><a id="4_File_Parsing_291"></a><strong>4. File
+            Parsing</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="292" data-line-end="297">Extract CSV fields:
+            <pre><code class="has-line-data" data-line-start="294" data-line-end="296" class="language-regex">(?:^|,)(\&quot;(?:[^\&quot;]+|\&quot;\&quot;)*\&quot;|[^,]*)
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=299 data-line-end=300><a
+            id="16_Regex_Across_Programming_Languages_299"></a><strong>16. Regex Across Programming Languages</strong>
+    </h2>
+    <h3 class="code-line" data-line-start=301 data-line-end=302><a id="Python_301"></a><strong>Python</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="302" data-line-end="303">Module: <code>re</code></li>
+        <li class="has-line-data" data-line-start="303" data-line-end="311">Example:
+            <pre><code class="has-line-data" data-line-start="305" data-line-end="310" class="language-python"><span class="hljs-keyword">import</span> re
+pattern = <span class="hljs-string">r"\d{3}-\d{2}-\d{4}"</span>
+match = re.search(pattern, <span class="hljs-string">"SSN: 123-45-6789"</span>)
+print(match.group())  <span class="hljs-comment"># Output: 123-45-6789</span>
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=311 data-line-end=312><a id="JavaScript_311"></a><strong>JavaScript</strong>
+    </h3>
+    <ul>
+        <li class="has-line-data" data-line-start="312" data-line-end="313">Syntax: <code>/pattern/flags</code></li>
+        <li class="has-line-data" data-line-start="313" data-line-end="320">Example:
+            <pre><code class="has-line-data" data-line-start="315" data-line-end="319" class="language-javascript"><span class="hljs-keyword">const</span> regex = <span class="hljs-regexp">/\d{3}-\d{2}-\d{4}/</span>;
+<span class="hljs-keyword">const</span> match = <span class="hljs-string">"SSN: 123-45-6789"</span>.match(regex);
+<span class="hljs-built_in">console</span>.log(match[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// Output: 123-45-6789</span>
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=320 data-line-end=321><a id="Java_320"></a><strong>Java</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="321" data-line-end="322">Package: <code>java.util.regex</code></li>
+        <li class="has-line-data" data-line-start="322" data-line-end="332">Example:
+            <pre><code class="has-line-data" data-line-start="324" data-line-end="331" class="language-java"><span class="hljs-keyword">import</span> java.util.regex.*;
+Pattern pattern = Pattern.compile(<span class="hljs-string">"\\d{3}-\\d{2}-\\d{4}"</span>);
+Matcher matcher = pattern.matcher(<span class="hljs-string">"SSN: 123-45-6789"</span>);
+<span class="hljs-keyword">if</span> (matcher.find()) {
+    System.out.println(matcher.group());  <span class="hljs-comment">// Output: 123-45-6789</span>
+}
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=332 data-line-end=333><a id="Bash_332"></a><strong>Bash</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="333" data-line-end="334">Use with <code>grep</code>,
+            <code>awk</code>, or <code>sed</code>.
+        </li>
+        <li class="has-line-data" data-line-start="334" data-line-end="339">Example:
+            <pre><code class="has-line-data" data-line-start="336" data-line-end="338" class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">"SSN: 123-45-6789"</span> | grep -oE <span class="hljs-string">'\d{3}-\d{2}-\d{4}'</span>
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=339 data-line-end=340><a id="R_339"></a><strong>R</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="340" data-line-end="341">Functions: <code>grepl</code>,
+            <code>gsub</code>, <code>regmatches</code>.
+        </li>
+        <li class="has-line-data" data-line-start="341" data-line-end="348">Example:
+            <pre><code class="has-line-data" data-line-start="343" data-line-end="347" class="language-r">text &lt;- <span class="hljs-string">"SSN: 123-45-6789"</span>
+pattern &lt;- <span class="hljs-string">"\\d{3}-\\d{2}-\\d{4}"</span>
+regmatches(text, gregexpr(pattern, text))
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=350 data-line-end=351><a
+            id="17_Best_Practices_for_Writing_Regex_350"></a><strong>17. Best Practices for Writing Regex</strong></h2>
+    <h3 class="code-line" data-line-start=352 data-line-end=353><a id="1_Start_Simple_352"></a><strong>1. Start
+            Simple</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="353" data-line-end="355">Write small patterns and test them
+            incrementally.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=355 data-line-end=356><a id="2_Use_Tools_355"></a><strong>2. Use
+            Tools</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="356" data-line-end="358">Use regex testing platforms like Regex101 or
+            Regexr to experiment.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=358 data-line-end=359><a id="3_Document_Patterns_358"></a><strong>3. Document
+            Patterns</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="359" data-line-end="372">Use comments to explain complex patterns in
+            languages that support verbose mode:
+            <pre><code class="has-line-data" data-line-start="361" data-line-end="371" class="language-python">pattern = <span class="hljs-string">r"""
+    ^               # Start of string
+    \d{4}           # Year
+    -               # Separator
+    (0[1-9]|1[0-2]) # Month
+    -               # Separator
+    (0[1-9]|[12]\d|3[01]) # Day
+    $               # End of string
+"""</span>
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=372 data-line-end=373><a id="4_Optimize_for_Performance_372"></a><strong>4.
+            Optimize for Performance</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="373" data-line-end="374">Avoid backtracking traps (e.g., nested
+            quantifiers like <code>(a+)+</code>).</li>
+        <li class="has-line-data" data-line-start="374" data-line-end="376">Prefer specific patterns (e.g.,
+            <code>\d{3}</code>) over general ones (e.g., <code>.*</code>).
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=378 data-line-end=379><a id="18_Debugging_Regex_378"></a><strong>18. Debugging
+            Regex</strong></h2>
+    <h3 class="code-line" data-line-start=380 data-line-end=381><a id="1_Common_Debugging_Steps_380"></a><strong>1.
+            Common Debugging Steps</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="381" data-line-end="382">Break the pattern into smaller parts and
+            test each individually.</li>
+        <li class="has-line-data" data-line-start="382" data-line-end="383">Use tools with live feedback (e.g.,
+            Regex101).</li>
+        <li class="has-line-data" data-line-start="383" data-line-end="385">Enable verbose mode for better readability.
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=385 data-line-end=386><a id="2_Tools_for_Debugging_385"></a><strong>2. Tools
+            for Debugging</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="386" data-line-end="387"><strong>Debuggex</strong>: Visualize regex
+            and understand backtracking paths.</li>
+        <li class="has-line-data" data-line-start="387" data-line-end="388"><strong>Pythex</strong>: Test Python regex
+            with instant feedback.</li>
+        <li class="has-line-data" data-line-start="388" data-line-end="390"><strong>RegexBuddy</strong>: Paid tool for
+            building and debugging regex.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=392 data-line-end=393><a
+            id="19_Regex_in_RealWorld_Applications_392"></a><strong>19. Regex in Real-World Applications</strong></h2>
+    <h3 class="code-line" data-line-start=394 data-line-end=395><a id="1_Web_Scraping_394"></a><strong>1. Web
+            Scraping</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="395" data-line-end="400">Extract product prices from HTML:
+            <pre><code class="has-line-data" data-line-start="397" data-line-end="399" class="language-regex">\$\d{1,3}(,\d{3})*(\.\d{2})?
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=400 data-line-end=401><a id="2_Data_Cleaning_400"></a><strong>2. Data
+            Cleaning</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="401" data-line-end="405">Remove extra spaces:
+            <pre><code class="has-line-data" data-line-start="403" data-line-end="405" class="language-regex">\s{2,}
+</code></pre>
+        </li>
+        <li class="has-line-data" data-line-start="405" data-line-end="410">Remove HTML tags:
+            <pre><code class="has-line-data" data-line-start="407" data-line-end="409" class="language-regex">&lt;[^&gt;]+&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 class="code-line" data-line-start=410 data-line-end=411><a id="3_Data_Transformation_410"></a><strong>3. Data
+            Transformation</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="411" data-line-end="416">Format phone numbers:
+            <pre><code class="has-line-data" data-line-start="413" data-line-end="415" class="language-regex">(\d{3})(\d{3})(\d{4}) -&gt; (\1) \2-\3
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=418 data-line-end=419><a id="20_Regex_Limitations_418"></a><strong>20. Regex
+            Limitations</strong></h2>
+    <h3 class="code-line" data-line-start=420 data-line-end=421><a id="1_Readability_420"></a><strong>1.
+            Readability</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="421" data-line-end="423">Complex patterns can become difficult to
+            understand and maintain.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=423 data-line-end=424><a id="2_Performance_423"></a><strong>2.
+            Performance</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="424" data-line-end="426">Regex can be slow on large inputs or poorly
+            written patterns.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=426 data-line-end=427><a id="3_Not_Turing_Complete_426"></a><strong>3. Not
+            Turing Complete</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="427" data-line-end="429">Regex cannot perform complex logic like
+            recursion (though some engines support limited recursion).</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=431 data-line-end=432><a
+            id="21_Advanced_Tools_and_Libraries_431"></a><strong>21. Advanced Tools and Libraries</strong></h2>
+    <h3 class="code-line" data-line-start=433 data-line-end=434><a id="1_Hyperscan_433"></a><strong>1.
+            Hyperscan</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="434" data-line-end="436">High-performance regex library used in
+            network security and big data.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=436 data-line-end=437><a id="2_PCRE_436"></a><strong>2. PCRE</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="437" data-line-end="439">Perl-Compatible Regular Expressions, used in
+            many programming languages and tools.</li>
+    </ul>
+    <h3 class="code-line" data-line-start=439 data-line-end=440><a id="3_Regex_Engines_in_AIML_439"></a><strong>3. Regex
+            Engines in AI/ML</strong></h3>
+    <ul>
+        <li class="has-line-data" data-line-start="440" data-line-end="442">AI-powered tools like GPT-3 can generate
+            regex from natural language queries.</li>
+    </ul>
+    <hr>
+    <h2 class="code-line" data-line-start=444 data-line-end=445><a id="Conclusion_444"></a><strong>Conclusion</strong>
+    </h2>
+    <p class="has-line-data" data-line-start="446" data-line-end="447">Regular expressions are versatile and powerful
+        tools for solving a variety of text-processing challenges. By mastering their syntax, understanding their
+        limitations, and leveraging the right tools, you can effectively tackle tasks ranging from simple validations to
+        complex data transformations. Practice, combined with a solid understanding of regex engines and performance
+        considerations, ensures you can write efficient and maintainable patterns for any application.</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>&copy; 2024 Vladyslav Tkachov</p>
+        </div>
+        <div class="footer-right">
+            <a href="https://linkedin.com/in/vladyslav-tkachov" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="https://github.com/vladyslav-tkachov" target="_blank" class="footer-link">GitHub</a>
+            <a href="mailto:tkachovvladyslav@gmail.com" class="footer-link">Email</a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../Js/dark-mode.js"></script>
+
+</body>
+
+</html>

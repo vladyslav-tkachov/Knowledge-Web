@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Knowledge Web - JavaScript guide</title>
+  <link rel="stylesheet" href="../css/guide.css">
+  <link rel="shortcut icon" href="../assets/images/web_icon/website_icon.png" type="image/x-icon">
+
+</head>
+
+<body id="preview">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-item">Home</a></li>
+        <li><a href="../html/mini_guides_languages.html" class="nav-item">Languages</a></li>
+        <li><a href="../html/mini_guides.html" class="nav-item">General</a></li>
+        <li><a href="../html/mini_guides_rpa.html" class="nav-item">RPA</a></li>
+        <!-- <li><a href="./html/projects.html" class="nav-item">Projects</a></li>
+                                  <li><a href="./html/bobbles.html" class="nav-item">Bobbles</a></li> -->
+      </ul>
+      <!-- Dark Mode Button -->
+      <div class="dark-mode-toggle">
+        <button id="dark-mode-btn">🌙 Dark Mode</button>
+      </div>
+    </div>
+  </nav>
+  <h2 class="code-line" data-line-start=0 data-line-end=1><a
+      id="1_Basics_Variables_Data_Types_and_InputOutput_0"></a><strong>1. Basics: Variables, Data Types, and
+      Input/Output</strong></h2>
+  <h3 class="code-line" data-line-start=2 data-line-end=3><a id="Code_Example_Variables_and_Output_2"></a><strong>Code
+      Example: Variables and Output</strong></h3>
+  <pre><code class="has-line-data" data-line-start="4" data-line-end="15" class="language-javascript"><span class="hljs-comment">// Log a message to the console</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello, JavaScript!"</span>);
+
+<span class="hljs-comment">// Declare variables</span>
+<span class="hljs-keyword">let</span> name = <span class="hljs-string">"Alice"</span>;  <span class="hljs-comment">// Mutable variable</span>
+<span class="hljs-keyword">const</span> age = <span class="hljs-number">25</span>;      <span class="hljs-comment">// Immutable variable</span>
+<span class="hljs-keyword">var</span> city = <span class="hljs-string">"New York"</span>;  <span class="hljs-comment">// Legacy declaration</span>
+
+<span class="hljs-comment">// Output variables</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Name: <span class="hljs-subst">${name}</span>, Age: <span class="hljs-subst">${age}</span>, City: <span class="hljs-subst">${city}</span>`</span>);
+</code></pre>
+  <h3 class="code-line" data-line-start=16 data-line-end=17><a id="Key_Concepts_16"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="17" data-line-end="18"><code>let</code> (block-scoped),
+      <code>const</code> (constants), and <code>var</code> (legacy, function-scoped).
+    </li>
+    <li class="has-line-data" data-line-start="18" data-line-end="19">Use <code>console.log()</code> to output to the
+      console.</li>
+    <li class="has-line-data" data-line-start="19" data-line-end="21"><strong>String Interpolation</strong>: Use
+      backticks (<code>) and</code>${}`.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=23 data-line-end=24><a id="2_Conditional_Statements_23"></a><strong>2.
+      Conditional Statements</strong></h2>
+  <h3 class="code-line" data-line-start=25 data-line-end=26><a id="Code_Example_IfElse_25"></a><strong>Code Example:
+      If/Else</strong></h3>
+  <pre><code class="has-line-data" data-line-start="27" data-line-end="39" class="language-javascript"><span class="hljs-keyword">let</span> score = <span class="hljs-number">85</span>;
+
+<span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">90</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Grade: A"</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">75</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Grade: B"</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">60</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Grade: C"</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Grade: F"</span>);
+}
+</code></pre>
+  <h3 class="code-line" data-line-start=40 data-line-end=41><a id="Key_Concepts_40"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="41" data-line-end="42">JavaScript uses <code>if</code>,
+      <code>else if</code>, and <code>else</code> for conditional logic.
+    </li>
+    <li class="has-line-data" data-line-start="42" data-line-end="44">Comparisons use operators like <code>==</code>,
+      <code>===</code> (strict equality), <code>!=</code>, <code>!==</code>, <code>&lt;</code>, <code>&gt;</code>.
+    </li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=46 data-line-end=47><a id="3_Loops_46"></a><strong>3. Loops</strong></h2>
+  <h3 class="code-line" data-line-start=48 data-line-end=49><a id="Code_Example_For_and_While_48"></a><strong>Code
+      Example: For and While</strong></h3>
+  <pre><code class="has-line-data" data-line-start="50" data-line-end="62" class="language-javascript"><span class="hljs-comment">// For loop</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Count: <span class="hljs-subst">${i}</span>`</span>);
+}
+
+<span class="hljs-comment">// While loop</span>
+<span class="hljs-keyword">let</span> counter = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">while</span> (counter &gt; <span class="hljs-number">0</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Countdown: <span class="hljs-subst">${counter}</span>`</span>);
+  counter--;
+}
+</code></pre>
+  <h3 class="code-line" data-line-start=63 data-line-end=64><a id="Key_Concepts_63"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="64" data-line-end="65"><code>for</code> and <code>while</code> loops
+      repeat tasks.</li>
+    <li class="has-line-data" data-line-start="65" data-line-end="67">Use <code>break</code> to exit a loop early, and
+      <code>continue</code> to skip to the next iteration.
+    </li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=69 data-line-end=70><a id="4_Functions_69"></a><strong>4. Functions</strong>
+  </h2>
+  <h3 class="code-line" data-line-start=71 data-line-end=72><a
+      id="Code_Example_Regular_and_Arrow_Functions_71"></a><strong>Code Example: Regular and Arrow Functions</strong>
+  </h3>
+  <pre><code class="has-line-data" data-line-start="73" data-line-end="84" class="language-javascript"><span class="hljs-comment">// Regular function</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>;
+}
+
+<span class="hljs-comment">// Arrow function</span>
+<span class="hljs-keyword">const</span> add = (a, b) =&gt; a + b;
+
+<span class="hljs-built_in">console</span>.log(greet(<span class="hljs-string">"Alice"</span>));  <span class="hljs-comment">// Output: Hello, Alice!</span>
+<span class="hljs-built_in">console</span>.log(add(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>));       <span class="hljs-comment">// Output: 7</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=85 data-line-end=86><a id="Key_Concepts_85"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="86" data-line-end="87">Functions can be declared with
+      <code>function</code> or as arrow functions (<code>=&gt;</code>).
+    </li>
+    <li class="has-line-data" data-line-start="87" data-line-end="89">Arrow functions are shorter but lack
+      <code>this</code> binding.
+    </li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=91 data-line-end=92><a id="5_Arrays_and_Objects_91"></a><strong>5. Arrays and
+      Objects</strong></h2>
+  <h3 class="code-line" data-line-start=93 data-line-end=94><a id="Code_Example_Arrays_93"></a><strong>Code Example:
+      Arrays</strong></h3>
+  <pre><code class="has-line-data" data-line-start="95" data-line-end="100" class="language-javascript"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"cherry"</span>];
+fruits.push(<span class="hljs-string">"orange"</span>);  <span class="hljs-comment">// Add an item</span>
+<span class="hljs-built_in">console</span>.log(fruits[<span class="hljs-number">1</span>]);  <span class="hljs-comment">// Access by index</span>
+<span class="hljs-built_in">console</span>.log(fruits.length);  <span class="hljs-comment">// Get array length</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=101 data-line-end=102><a id="Code_Example_Objects_101"></a><strong>Code Example:
+      Objects</strong></h3>
+  <pre><code class="has-line-data" data-line-start="103" data-line-end="113" class="language-javascript"><span class="hljs-keyword">let</span> person = {
+  name: <span class="hljs-string">"Alice"</span>,
+  age: <span class="hljs-number">25</span>,
+  city: <span class="hljs-string">"New York"</span>,
+};
+
+<span class="hljs-built_in">console</span>.log(person.name);  <span class="hljs-comment">// Access properties</span>
+person.age = <span class="hljs-number">26</span>;  <span class="hljs-comment">// Update a property</span>
+<span class="hljs-built_in">console</span>.log(person);
+</code></pre>
+  <h3 class="code-line" data-line-start=114 data-line-end=115><a id="Key_Concepts_114"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="115" data-line-end="116"><strong>Arrays</strong>: Ordered collections of
+      items.</li>
+    <li class="has-line-data" data-line-start="116" data-line-end="118"><strong>Objects</strong>: Key-value pairs for
+      storing related data.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=120 data-line-end=121><a id="6_Classes_and_OOP_120"></a><strong>6. Classes and
+      OOP</strong></h2>
+  <h3 class="code-line" data-line-start=122 data-line-end=123><a id="Code_Example_Classes_122"></a><strong>Code Example:
+      Classes</strong></h3>
+  <pre><code class="has-line-data" data-line-start="124" data-line-end="138" class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> </span>{
+  constructor(name, age) {
+    <span class="hljs-keyword">this</span>.name = name;
+    <span class="hljs-keyword">this</span>.age = age;
+  }
+
+  bark() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${this.name}</span> says Woof!`</span>;
+  }
+}
+
+<span class="hljs-keyword">let</span> myDog = <span class="hljs-keyword">new</span> Dog(<span class="hljs-string">"Buddy"</span>, <span class="hljs-number">3</span>);
+<span class="hljs-built_in">console</span>.log(myDog.bark());
+</code></pre>
+  <h3 class="code-line" data-line-start=139 data-line-end=140><a id="Key_Concepts_139"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="140" data-line-end="141">Use <code>class</code> to define classes.</li>
+    <li class="has-line-data" data-line-start="141" data-line-end="143"><code>constructor()</code> initializes
+      properties, and methods define behavior.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=145 data-line-end=146><a id="7_Asynchronous_JavaScript_145"></a><strong>7.
+      Asynchronous JavaScript</strong></h2>
+  <h3 class="code-line" data-line-start=147 data-line-end=148><a
+      id="Code_Example_Promises_and_AsyncAwait_147"></a><strong>Code Example: Promises and Async/Await</strong></h3>
+  <pre><code class="has-line-data" data-line-start="149" data-line-end="166" class="language-javascript"><span class="hljs-comment">// Using Promises</span>
+<span class="hljs-keyword">const</span> fetchData = () =&gt; {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+    setTimeout(() =&gt; resolve(<span class="hljs-string">"Data fetched!"</span>), <span class="hljs-number">1000</span>);
+  });
+};
+
+fetchData().then((data) =&gt; <span class="hljs-built_in">console</span>.log(data));
+
+<span class="hljs-comment">// Using Async/Await</span>
+<span class="hljs-keyword">const</span> fetchAsyncData = <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">let</span> data = <span class="hljs-keyword">await</span> fetchData();
+  <span class="hljs-built_in">console</span>.log(data);
+};
+
+fetchAsyncData();
+</code></pre>
+  <h3 class="code-line" data-line-start=167 data-line-end=168><a id="Key_Concepts_167"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="168" data-line-end="169"><strong>Promises</strong>: Handle async tasks
+      with <code>.then()</code> and <code>.catch()</code>.</li>
+    <li class="has-line-data" data-line-start="169" data-line-end="171"><strong>Async/Await</strong>: Cleaner syntax for
+      working with asynchronous code.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=173 data-line-end=174><a id="8_DOM_Manipulation_173"></a><strong>8. DOM
+      Manipulation</strong></h2>
+  <h3 class="code-line" data-line-start=175 data-line-end=176><a
+      id="Code_Example_Select_and_Modify_Elements_175"></a><strong>Code Example: Select and Modify Elements</strong>
+  </h3>
+  <pre><code class="has-line-data" data-line-start="177" data-line-end="191" class="language-javascript"><span class="hljs-comment">// Select an element</span>
+<span class="hljs-keyword">const</span> heading = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"h1"</span>);
+
+<span class="hljs-comment">// Change text content</span>
+heading.textContent = <span class="hljs-string">"Welcome to JavaScript!"</span>;
+
+<span class="hljs-comment">// Add a class</span>
+heading.classList.add(<span class="hljs-string">"highlight"</span>);
+
+<span class="hljs-comment">// Listen for a click</span>
+heading.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; {
+  alert(<span class="hljs-string">"Heading clicked!"</span>);
+});
+</code></pre>
+  <h3 class="code-line" data-line-start=192 data-line-end=193><a id="Key_Concepts_192"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="193" data-line-end="194">Use <code>document.querySelector()</code> to
+      select elements.</li>
+    <li class="has-line-data" data-line-start="194" data-line-end="195">Manipulate properties like
+      <code>textContent</code> and <code>classList</code>.
+    </li>
+    <li class="has-line-data" data-line-start="195" data-line-end="197">Add event listeners with
+      <code>.addEventListener()</code>.
+    </li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=199 data-line-end=200><a id="9_Error_Handling_199"></a><strong>9. Error
+      Handling</strong></h2>
+  <h3 class="code-line" data-line-start=201 data-line-end=202><a id="Code_Example_TryCatch_201"></a><strong>Code
+      Example: Try/Catch</strong></h3>
+  <pre><code class="has-line-data" data-line-start="203" data-line-end="211" class="language-javascript"><span class="hljs-keyword">try</span> {
+  <span class="hljs-keyword">let</span> num = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">"abc"</span>);  <span class="hljs-comment">// Invalid conversion</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(num)) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Not a number!"</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Square: <span class="hljs-subst">${num * num}</span>`</span>);
+} <span class="hljs-keyword">catch</span> (error) {
+  <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`Error: <span class="hljs-subst">${error.message}</span>`</span>);
+}
+</code></pre>
+  <h3 class="code-line" data-line-start=212 data-line-end=213><a id="Key_Concepts_212"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="213" data-line-end="214">Use <code>try</code> and <code>catch</code> to
+      handle errors gracefully.</li>
+    <li class="has-line-data" data-line-start="214" data-line-end="216"><code>throw</code> creates custom errors.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=218 data-line-end=219><a id="10_Advanced_Topics_218"></a><strong>10. Advanced
+      Topics</strong></h2>
+  <h3 class="code-line" data-line-start=220 data-line-end=221><a id="Array_Methods_220"></a><strong>Array
+      Methods</strong></h3>
+  <pre><code class="has-line-data" data-line-start="222" data-line-end="235" class="language-javascript"><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+
+<span class="hljs-comment">// Map: Transform each item</span>
+<span class="hljs-keyword">let</span> squares = numbers.map((n) =&gt; n * n);
+
+<span class="hljs-comment">// Filter: Keep items that match criteria</span>
+<span class="hljs-keyword">let</span> evens = numbers.filter((n) =&gt; n % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>);
+
+<span class="hljs-comment">// Reduce: Accumulate values</span>
+<span class="hljs-keyword">let</span> sum = numbers.reduce((acc, n) =&gt; acc + n, <span class="hljs-number">0</span>);
+
+<span class="hljs-built_in">console</span>.log(squares, evens, sum);
+</code></pre>
+  <h3 class="code-line" data-line-start=236 data-line-end=237><a id="Closures_236"></a><strong>Closures</strong></h3>
+  <pre><code class="has-line-data" data-line-start="238" data-line-end="250" class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">counter</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    count++;
+    <span class="hljs-keyword">return</span> count;
+  };
+}
+
+<span class="hljs-keyword">const</span> increment = counter();
+<span class="hljs-built_in">console</span>.log(increment());  <span class="hljs-comment">// 1</span>
+<span class="hljs-built_in">console</span>.log(increment());  <span class="hljs-comment">// 2</span>
+</code></pre>
+  <hr>
+  <h2 class="code-line" data-line-start=253 data-line-end=254><a
+      id="11_Destructuring_and_RestSpread_Operators_253"></a><strong>11. Destructuring and Rest/Spread
+      Operators</strong></h2>
+  <h3 class="code-line" data-line-start=255 data-line-end=256><a id="Code_Example_Destructuring_255"></a><strong>Code
+      Example: Destructuring</strong></h3>
+  <pre><code class="has-line-data" data-line-start="257" data-line-end="266" class="language-javascript"><span class="hljs-comment">// Array destructuring</span>
+<span class="hljs-keyword">const</span> [a, b, c] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-built_in">console</span>.log(a, b, c); <span class="hljs-comment">// Output: 1 2 3</span>
+
+<span class="hljs-comment">// Object destructuring</span>
+<span class="hljs-keyword">const</span> user = { name: <span class="hljs-string">"Alice"</span>, age: <span class="hljs-number">25</span>, city: <span class="hljs-string">"New York"</span> };
+<span class="hljs-keyword">const</span> { name, city } = user;
+<span class="hljs-built_in">console</span>.log(name, city); <span class="hljs-comment">// Output: Alice New York</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=267 data-line-end=268><a id="Code_Example_Rest_and_Spread_267"></a><strong>Code
+      Example: Rest and Spread</strong></h3>
+  <pre><code class="has-line-data" data-line-start="269" data-line-end="278" class="language-javascript"><span class="hljs-comment">// Rest operator</span>
+<span class="hljs-keyword">const</span> [x, ...rest] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-built_in">console</span>.log(rest); <span class="hljs-comment">// Output: [2, 3, 4]</span>
+
+<span class="hljs-comment">// Spread operator</span>
+<span class="hljs-keyword">const</span> arr1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>];
+<span class="hljs-keyword">const</span> arr2 = [...arr1, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-built_in">console</span>.log(arr2); <span class="hljs-comment">// Output: [1, 2, 3, 4]</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=279 data-line-end=280><a id="Key_Concepts_279"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="280" data-line-end="281"><strong>Destructuring</strong>: Simplifies
+      extracting values from arrays or objects.</li>
+    <li class="has-line-data" data-line-start="281" data-line-end="282"><strong>Spread (<code>...</code>)</strong>:
+      Expands arrays/objects into individual elements.</li>
+    <li class="has-line-data" data-line-start="282" data-line-end="284"><strong>Rest (<code>...</code>)</strong>: Groups
+      remaining elements into a new array.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=286 data-line-end=287><a id="12_Event_Delegation_286"></a><strong>12. Event
+      Delegation</strong></h2>
+  <h3 class="code-line" data-line-start=288 data-line-end=289><a
+      id="Code_Example_Efficient_Event_Handling_288"></a><strong>Code Example: Efficient Event Handling</strong></h3>
+  <pre><code class="has-line-data" data-line-start="290" data-line-end="296" class="language-javascript"><span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#parent"</span>).addEventListener(<span class="hljs-string">"click"</span>, (e) =&gt; {
+  <span class="hljs-keyword">if</span> (e.target &amp;&amp; e.target.matches(<span class="hljs-string">"button.classname"</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Button clicked:"</span>, e.target.textContent);
+  }
+});
+</code></pre>
+  <h3 class="code-line" data-line-start=297 data-line-end=298><a id="Key_Concepts_297"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="298" data-line-end="299">Attach a single event listener to a parent
+      element.</li>
+    <li class="has-line-data" data-line-start="299" data-line-end="301">Detect child element actions using
+      <code>e.target</code>.
+    </li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=303 data-line-end=304><a id="13_JavaScript_Modules_ES6_303"></a><strong>13.
+      JavaScript Modules (ES6)</strong></h2>
+  <h3 class="code-line" data-line-start=305 data-line-end=306><a
+      id="Code_Example_Export_and_Import_305"></a><strong>Code Example: Export and Import</strong></h3>
+  <p class="has-line-data" data-line-start="306" data-line-end="307"><strong>file: math.js</strong></p>
+  <pre><code class="has-line-data" data-line-start="308" data-line-end="311" class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> add = (a, b) =&gt; a + b;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> subtract = (a, b) =&gt; a - b;
+</code></pre>
+  <p class="has-line-data" data-line-start="312" data-line-end="313"><strong>file: app.js</strong></p>
+  <pre><code class="has-line-data" data-line-start="314" data-line-end="317" class="language-javascript"><span class="hljs-keyword">import</span> { add, subtract } <span class="hljs-keyword">from</span> <span class="hljs-string">"./math.js"</span>;
+<span class="hljs-built_in">console</span>.log(add(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// Output: 8</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=318 data-line-end=319><a id="Key_Concepts_318"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="319" data-line-end="320">Use <code>export</code> to share variables,
+      functions, or classes.</li>
+    <li class="has-line-data" data-line-start="320" data-line-end="321">Use <code>import</code> to bring them into other
+      files.</li>
+    <li class="has-line-data" data-line-start="321" data-line-end="323">Ensures modular, reusable code.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=325 data-line-end=326><a id="14_Regular_Expressions_325"></a><strong>14. Regular
+      Expressions</strong></h2>
+  <h3 class="code-line" data-line-start=327 data-line-end=328><a
+      id="Code_Example_Matching_Patterns_327"></a><strong>Code Example: Matching Patterns</strong></h3>
+  <pre><code class="has-line-data" data-line-start="329" data-line-end="333" class="language-javascript"><span class="hljs-keyword">const</span> emailRegex = <span class="hljs-regexp">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span>;
+<span class="hljs-keyword">const</span> isValid = emailRegex.test(<span class="hljs-string">"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="016479606c716d6441756472752f626e6c">[email&#160;protected]</a>"</span>);
+<span class="hljs-built_in">console</span>.log(isValid); <span class="hljs-comment">// Output: true</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=334 data-line-end=335><a id="Key_Concepts_334"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="335" data-line-end="336">Use <code>RegExp</code> for text matching and
+      manipulation.</li>
+    <li class="has-line-data" data-line-start="336" data-line-end="340">Methods:
+      <ul>
+        <li class="has-line-data" data-line-start="337" data-line-end="338"><code>test()</code>: Checks if a pattern
+          exists.</li>
+        <li class="has-line-data" data-line-start="338" data-line-end="340"><code>match()</code>: Extracts matching
+          strings.</li>
+      </ul>
+    </li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=342 data-line-end=343><a id="15_Web_Storage_342"></a><strong>15. Web
+      Storage</strong></h2>
+  <h3 class="code-line" data-line-start=344 data-line-end=345><a id="Code_Example_LocalStorage_344"></a><strong>Code
+      Example: LocalStorage</strong></h3>
+  <pre><code class="has-line-data" data-line-start="346" data-line-end="355" class="language-javascript"><span class="hljs-comment">// Store data</span>
+localStorage.setItem(<span class="hljs-string">"username"</span>, <span class="hljs-string">"Alice"</span>);
+
+<span class="hljs-comment">// Retrieve data</span>
+<span class="hljs-built_in">console</span>.log(localStorage.getItem(<span class="hljs-string">"username"</span>)); <span class="hljs-comment">// Output: Alice</span>
+
+<span class="hljs-comment">// Remove data</span>
+localStorage.removeItem(<span class="hljs-string">"username"</span>);
+</code></pre>
+  <h3 class="code-line" data-line-start=356 data-line-end=357><a id="Key_Concepts_356"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="357" data-line-end="358"><strong>localStorage</strong>: Persistent
+      storage.</li>
+    <li class="has-line-data" data-line-start="358" data-line-end="360"><strong>sessionStorage</strong>: Data cleared
+      when the browser tab is closed.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=362 data-line-end=363><a id="16_Fetch_API_362"></a><strong>16. Fetch
+      API</strong></h2>
+  <h3 class="code-line" data-line-start=364 data-line-end=365><a
+      id="Code_Example_Making_API_Requests_364"></a><strong>Code Example: Making API Requests</strong></h3>
+  <pre><code class="has-line-data" data-line-start="366" data-line-end="371" class="language-javascript">fetch(<span class="hljs-string">"https://jsonplaceholder.typicode.com/posts/1"</span>)
+  .then((response) =&gt; response.json())
+  .then((data) =&gt; <span class="hljs-built_in">console</span>.log(data))
+  .catch((error) =&gt; <span class="hljs-built_in">console</span>.error(<span class="hljs-string">"Error:"</span>, error));
+</code></pre>
+  <h3 class="code-line" data-line-start=372 data-line-end=373><a id="Key_Concepts_372"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="373" data-line-end="374">Use <code>fetch()</code> for making HTTP
+      requests.</li>
+    <li class="has-line-data" data-line-start="374" data-line-end="376">Use <code>.json()</code> to parse JSON
+      responses.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=378 data-line-end=379><a id="17_HigherOrder_Functions_378"></a><strong>17.
+      Higher-Order Functions</strong></h2>
+  <h3 class="code-line" data-line-start=380 data-line-end=381><a
+      id="Code_Example_Passing_Functions_380"></a><strong>Code Example: Passing Functions</strong></h3>
+  <pre><code class="has-line-data" data-line-start="382" data-line-end="387" class="language-javascript"><span class="hljs-keyword">const</span> multiply = (n) =&gt; n * <span class="hljs-number">2</span>;
+
+<span class="hljs-keyword">const</span> processNumbers = (arr, fn) =&gt; arr.map(fn);
+<span class="hljs-built_in">console</span>.log(processNumbers([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], multiply)); <span class="hljs-comment">// Output: [2, 4, 6]</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=388 data-line-end=389><a id="Key_Concepts_388"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="389" data-line-end="391">Functions that take other functions as arguments
+      or return them are higher-order functions.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=393 data-line-end=394><a id="18_Closures_393"></a><strong>18. Closures</strong>
+  </h2>
+  <h3 class="code-line" data-line-start=395 data-line-end=396><a
+      id="Code_Example_Remembering_State_395"></a><strong>Code Example: Remembering State</strong></h3>
+  <pre><code class="has-line-data" data-line-start="397" data-line-end="406" class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">counter</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">return</span> () =&gt; ++count;
+}
+
+<span class="hljs-keyword">const</span> increment = counter();
+<span class="hljs-built_in">console</span>.log(increment()); <span class="hljs-comment">// Output: 1</span>
+<span class="hljs-built_in">console</span>.log(increment()); <span class="hljs-comment">// Output: 2</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=407 data-line-end=408><a id="Key_Concepts_407"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="408" data-line-end="410">A closure allows a function to remember
+      variables from its scope even after it’s returned.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=412 data-line-end=413><a id="19_The_Event_Loop_412"></a><strong>19. The Event
+      Loop</strong></h2>
+  <h3 class="code-line" data-line-start=414 data-line-end=415><a
+      id="Code_Example_Understanding_Asynchronous_Behavior_414"></a><strong>Code Example: Understanding Asynchronous
+      Behavior</strong></h3>
+  <pre><code class="has-line-data" data-line-start="416" data-line-end="424" class="language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Start"</span>);
+
+setTimeout(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Timeout"</span>), <span class="hljs-number">0</span>);
+
+<span class="hljs-built_in">Promise</span>.resolve().then(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Promise"</span>));
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"End"</span>);
+</code></pre>
+  <h3 class="code-line" data-line-start=425 data-line-end=426><a id="Output_Explanation_425"></a><strong>Output
+      Explanation</strong></h3>
+  <ul>
+    <li class="has-line-data" data-line-start="426" data-line-end="427">Logs: Start → End → Promise → Timeout</li>
+    <li class="has-line-data" data-line-start="427" data-line-end="430"><strong>Key Concepts</strong>:
+      <ul>
+        <li class="has-line-data" data-line-start="428" data-line-end="430">The event loop prioritizes synchronous code,
+          followed by microtasks (e.g., Promises), then macrotasks (e.g., setTimeout).</li>
+      </ul>
+    </li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=432 data-line-end=433><a
+      id="20_Error_Handling_and_Debugging_432"></a><strong>20. Error Handling and Debugging</strong></h2>
+  <h3 class="code-line" data-line-start=434 data-line-end=435><a id="Code_Example_Custom_Error_434"></a><strong>Code
+      Example: Custom Error</strong></h3>
+  <pre><code class="has-line-data" data-line-start="436" data-line-end="444" class="language-javascript"><span class="hljs-keyword">try</span> {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Something went wrong!"</span>);
+} <span class="hljs-keyword">catch</span> (error) {
+  <span class="hljs-built_in">console</span>.error(error.message); <span class="hljs-comment">// Output: Something went wrong!</span>
+} <span class="hljs-keyword">finally</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Cleanup code runs here."</span>);
+}
+</code></pre>
+  <h3 class="code-line" data-line-start=445 data-line-end=446><a id="Key_Concepts_445"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="446" data-line-end="447">Use <code>try</code>, <code>catch</code>, and
+      <code>finally</code> to handle errors.
+    </li>
+    <li class="has-line-data" data-line-start="447" data-line-end="449">Debug using browser developer tools
+      (<code>F12</code>).</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=451 data-line-end=452><a id="21_Map_and_Set_451"></a><strong>21. Map and
+      Set</strong></h2>
+  <h3 class="code-line" data-line-start=453 data-line-end=454><a id="Code_Example_Map_453"></a><strong>Code Example:
+      Map</strong></h3>
+  <pre><code class="has-line-data" data-line-start="455" data-line-end="461" class="language-javascript"><span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
+map.set(<span class="hljs-string">"key1"</span>, <span class="hljs-string">"value1"</span>);
+map.set(<span class="hljs-string">"key2"</span>, <span class="hljs-string">"value2"</span>);
+
+<span class="hljs-built_in">console</span>.log(map.get(<span class="hljs-string">"key1"</span>)); <span class="hljs-comment">// Output: value1</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=462 data-line-end=463><a id="Code_Example_Set_462"></a><strong>Code Example:
+      Set</strong></h3>
+  <pre><code class="has-line-data" data-line-start="464" data-line-end="471" class="language-javascript"><span class="hljs-keyword">const</span> set = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>();
+set.add(<span class="hljs-number">1</span>);
+set.add(<span class="hljs-number">2</span>);
+set.add(<span class="hljs-number">2</span>); <span class="hljs-comment">// Duplicate ignored</span>
+
+<span class="hljs-built_in">console</span>.log(set.has(<span class="hljs-number">2</span>)); <span class="hljs-comment">// Output: true</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=472 data-line-end=473><a id="Key_Concepts_472"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="473" data-line-end="474"><strong>Map</strong>: Key-value pairs, similar
+      to objects but with additional features.</li>
+    <li class="has-line-data" data-line-start="474" data-line-end="476"><strong>Set</strong>: Unique values, great for
+      filtering duplicates.</li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=478 data-line-end=479><a id="22_Advanced_Array_Methods_478"></a><strong>22.
+      Advanced Array Methods</strong></h2>
+  <h3 class="code-line" data-line-start=480 data-line-end=481><a id="Code_Example_Chaining_Methods_480"></a><strong>Code
+      Example: Chaining Methods</strong></h3>
+  <pre><code class="has-line-data" data-line-start="482" data-line-end="491" class="language-javascript"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+
+<span class="hljs-keyword">const</span> result = numbers
+  .filter((n) =&gt; n % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>)
+  .map((n) =&gt; n * n)
+  .reduce((sum, n) =&gt; sum + n, <span class="hljs-number">0</span>);
+
+<span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// Output: 20</span>
+</code></pre>
+  <h3 class="code-line" data-line-start=492 data-line-end=493><a id="Key_Concepts_492"></a><strong>Key Concepts</strong>
+  </h3>
+  <ul>
+    <li class="has-line-data" data-line-start="493" data-line-end="495">Combine methods like <code>filter()</code>,
+      <code>map()</code>, and <code>reduce()</code> for powerful operations.
+    </li>
+  </ul>
+  <hr>
+  <h2 class="code-line" data-line-start=497 data-line-end=498><a
+      id="23_JSON_JavaScript_Object_Notation_497"></a><strong>23. JSON (JavaScript Object Notation)</strong></h2>
+  <h3 class="code-line" data-line-start=499 data-line-end=500><a
+      id="Code_Example_Parse_and_Stringify_499"></a><strong>Code Example: Parse and Stringify</strong></h3>
+  <pre><code class="has-line-data" data-line-start="501" data-line-end="511" class="language-javascript"><span class="hljs-keyword">const</span> jsonString = <span class="hljs-string">'{"name": "Alice", "age": 25}'</span>;
+
+<span class="hljs-comment">// Parse JSON</span>
+<span class="hljs-keyword">const</span> user = <span class="hljs-built_in">JSON</span>.parse(jsonString);
+<span class="hljs-built_in">console</span>.log(user.name); <span class="hljs-comment">// Output: Alice</span>
+
+<span class="hljs-comment">// Stringify JSON</span>
+<span class="hljs-keyword">const</span> newJson = <span class="hljs-built_in">JSON</span>.stringify(user);
+<span class="hljs-built_in">console</span>.log(newJson);
+</code></pre>
+  <hr>
+  <h2 class="code-line" data-line-start=514 data-line-end=515><a id="24_JavaScript_Best_Practices_514"></a><strong>24.
+      JavaScript Best Practices</strong></h2>
+  <ol>
+    <li class="has-line-data" data-line-start="515" data-line-end="520"><strong>Use Strict Mode</strong>:
+      <pre><code class="has-line-data" data-line-start="517" data-line-end="520" class="language-javascript"><span class="hljs-pi">"use strict"</span>;
+<span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>; <span class="hljs-comment">// Safer coding</span>
+</code></pre>
+    </li>
+    <li class="has-line-data" data-line-start="520" data-line-end="521"><strong>Avoid Global Variables</strong>.</li>
+    <li class="has-line-data" data-line-start="521" data-line-end="523"><strong>Use <code>const</code> and
+        <code>let</code></strong> instead of <code>var</code>.</li>
+  </ol>
+  <hr>
+  <h3 class="code-line" data-line-start=525 data-line-end=526><a id="Resources_525"></a><strong>Resources</strong></h3>
+  <ol>
+    <li class="has-line-data" data-line-start="526" data-line-end="527"><a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript MDN Docs</a></li>
+    <li class="has-line-data" data-line-start="527" data-line-end="528"><a
+        href="https://javascript.info/">JavaScript.info</a></li>
+    <li class="has-line-data" data-line-start="528" data-line-end="529"><a
+        href="https://eloquentjavascript.net/">Eloquent JavaScript</a></li>
+  </ol>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <p>&copy; 2024 Vladyslav Tkachov</p>
+    </div>
+    <div class="footer-right">
+      <a href="https://linkedin.com/in/vladyslav-tkachov" target="_blank" class="footer-link">LinkedIn</a>
+      <a href="https://github.com/vladyslav-tkachov" target="_blank" class="footer-link">GitHub</a>
+      <a href="mailto:tkachovvladyslav@gmail.com" class="footer-link">Email</a>
+    </div>
+  </footer>
+  <script type="text/javascript" src="../Js/dark-mode.js"></script>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+
+</html>
